@@ -9,3 +9,10 @@ Thumbs.db
 
 # Local preview tooling
 .claude/launch.json
+
+# Internal launch / working docs — keep local, never publish on the public site
+OIR_SITE_AUDIT.md
+LAUNCH_READINESS_REPORT.md
+DEPLOYMENT.md
+*_AUDIT.md
+*_READINESS_REPORT.md
