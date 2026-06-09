@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oir Technologies — Building technology that moves communities forward</title>
+<meta name="description" content="We partner with founders, organizations, and businesses to create software that people love and communities rely on.">
+<link rel="canonical" href="https://oirtechnologies.com/">
+<meta name="theme-color" content="#07111F">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="apple-touch-icon" href="assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Oir Technologies">
+<meta property="og:title" content="Oir Technologies — Software for Communities, Organizations &amp; Businesses">
+<meta property="og:description" content="We partner with founders, organizations, and businesses to design and build secure, beautiful software that creates real impact.">
+<meta property="og:url" content="https://oirtechnologies.com/">
+<meta property="og:image" content="https://oirtechnologies.com/assets/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Oir Technologies — Software for Communities, Organizations &amp; Businesses">
+<meta name="twitter:description" content="We partner with founders, organizations, and businesses to design and build secure, beautiful software that creates real impact.">
+<meta name="twitter:image" content="https://oirtechnologies.com/assets/og-image.svg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Oir Technologies","url":"https://oirtechnologies.com","logo":"https://oirtechnologies.com/assets/favicon.svg","description":"Oir Technologies designs and builds secure, premium software for communities, organizations, and businesses.","email":"hello@oirtechnologies.com","contactPoint":{"@type":"ContactPoint","contactType":"sales","email":"hello@oirtechnologies.com"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"Oir Technologies","url":"https://oirtechnologies.com"}
+</script>
+<script defer src="assets/analytics.js"></script>
+<link rel="stylesheet" href="assets/oir.css">
+<link rel="stylesheet" href="assets/oir-mockups.css">
+<style>
+  /* Home-specific */
+  /* Header overlays the navy hero (pull hero up under the sticky transparent bar) */
+  body[data-page="home"] { --hh: 84px; }
+  @media (max-width: 620px) { body[data-page="home"] { --hh: 70px; } }
+  .hero { position: relative; background: var(--navy); color: var(--ivory); overflow: hidden;
+    margin-top: calc(-1 * var(--hh, 84px)); }
+  .hero::before {
+    content: ""; position: absolute; inset: 0;
+    background:
+      radial-gradient(60% 70% at 88% 8%, rgba(201,168,106,.10), transparent 55%),
+      radial-gradient(50% 60% at 0% 100%, rgba(16,35,63,.7), transparent 60%);
+    pointer-events: none;
+  }
+  .hero-inner { position: relative; display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px;
+    align-items: center; min-height: 86vh; padding-block: calc(var(--hh, 84px) + 40px) 100px; }
+  .hero h1 { font-size: clamp(3rem, 5.7vw, 5.6rem); line-height: 1.02; letter-spacing: -0.02em; }
+  .hero h1 em { font-style: italic; color: var(--gold); }
+  .hero h1 { padding-bottom: .12em; }
+  .hero .lead { max-width: 470px; margin-top: 34px; }
+  .hero .cta-row { display: flex; gap: 14px; margin-top: 46px; flex-wrap: wrap; }
+
+  /* ecosystem scene */
+  .scene { position: relative; height: 100%; min-height: 460px; }
+  .scene .arc {
+    position: absolute; width: 92%; height: 92%; right: -6%; top: 6%;
+    border: 1.5px solid transparent;
+    border-top-color: rgba(201,168,106,.5);
+    border-right-color: rgba(201,168,106,.28);
+    border-radius: 50%; transform: rotate(-26deg);
+    pointer-events: none;
+  }
+  .scene .laptop-wrap { position: absolute; right: -4%; top: 8%; width: 86%; z-index: 2;
+    filter: drop-shadow(0 40px 70px rgba(0,0,0,.5)); }
+  .scene .phone-wrap { position: absolute; left: -2%; bottom: -4%; width: 31%; z-index: 3; }
+
+  @media (max-width: 980px) {
+    .hero-inner { grid-template-columns: 1fr; min-height: auto; gap: 12px; padding-block: calc(var(--hh, 84px) + 18px) 70px; }
+    .scene { min-height: 60vw; margin-top: 28px; }
+    .scene .laptop-wrap { width: 76%; right: 0; top: 2%; }
+    .scene .phone-wrap { width: 26%; left: 0; bottom: 0; }
+    .scene .arc { top: 0; }
+  }
+
+  .whatwedo .feature { text-align: center; align-items: center; }
+  .whatwedo .feature .ic { margin-bottom: 4px; }
+  .whatwedo .features { margin-top: 64px; }
+
+  .featured { background: var(--ivory-2); }
+  .featured .fp-grid { grid-template-columns: repeat(3, 1fr); margin-top: 64px; gap: 30px; }
+  .fp {
+    background: #fff; border: 1px solid rgba(12,22,38,.045); border-radius: var(--radius-lg);
+    overflow: hidden; box-shadow: var(--shadow-card); display: flex; flex-direction: column;
+    transition: transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .5s;
+  }
+  .fp:hover { transform: translateY(-8px); box-shadow: var(--shadow-float); }
+  .fp .fp-vis { padding: 38px 34px 0; display: grid; place-items: center; background: linear-gradient(180deg, #f6f7f9, #fff); }
+  .fp .fp-vis [data-mock] { width: 186px; }
+  .fp .fp-body { padding: 30px 32px 34px; display: flex; flex-direction: column; gap: 11px; flex: 1; }
+  .fp .fp-cat { font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-deep); font-weight: 600; }
+  .fp h3 { font-size: 1.65rem; }
+  .fp p { color: var(--gray); font-size: 0.95rem; margin: 0; flex: 1; line-height: 1.6; }
+
+  @media (max-width: 880px) { .featured .fp-grid { grid-template-columns: 1fr; } .fp { flex-direction: row; align-items: center; } .fp .fp-vis { padding: 22px; } .fp .fp-vis [data-mock] { width: 120px; } }
+  @media (max-width: 540px) { .fp { flex-direction: column; } }
+
+  .why .features { margin-top: 56px; }
+  .final-cta { background: var(--ivory); position: relative; overflow: hidden; }
+  .final-cta .fc-inner { display: grid; grid-template-columns: auto 1fr auto; gap: 50px; align-items: center; }
+  .final-cta .burst { width: 84px; color: var(--gold); flex: none; }
+  .final-cta h2 { font-size: clamp(1.9rem, 3vw, 2.6rem); line-height: 1.12; }
+  .final-cta .fc-arc { position: absolute; right: -120px; bottom: -160px; width: 360px; height: 360px; border-radius: 50%; border: 1px solid var(--line); }
+  .final-cta .fc-arc.two { width: 460px; height: 460px; right: -160px; bottom: -200px; }
+  @media (max-width: 880px) { .final-cta .fc-inner { grid-template-columns: 1fr; gap: 28px; text-align: left; } .final-cta .burst { width: 60px; } }
+</style>
+</head>
+<body data-page="home">
+<header id="site-header"></header>
+
+<!-- HERO -->
+<section class="hero" data-screen-label="Home — Hero">
+  <div class="wrap-wide hero-inner">
+    <div class="hero-copy">
+      <span class="eyebrow on-dark reveal">Oir Technologies</span>
+      <h1 class="reveal d1" style="margin-top:20px">Building technology that moves communities and organizations <em>forward.</em></h1>
+      <p class="lead reveal d2">We partner with founders, organizations, and businesses to create software that people love and communities rely on.</p>
+      <div class="cta-row reveal d3">
+        <a class="btn btn-gold btn-lg" href="start-a-project.html" data-analytics="cta_hero_build">Let's Build Together <svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost btn-lg" href="case-studies.html" data-analytics="cta_hero_work">See Our Work</a>
+      </div>
+    </div>
+    <div class="scene reveal d2">
+      <div class="arc"></div>
+      <div class="laptop-wrap" data-laptop></div>
+      <div class="phone-wrap" data-mock="shidduch"></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE DO -->
+<section class="section whatwedo">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">What We Do</span>
+      <h2 class="h-lg">End-to-end product development<br>built around your mission.</h2>
+    </div>
+    <div class="grid cols-4 divided features">
+      <div class="feature reveal">
+        <span class="ic">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-4 10.5c.7.7 1 1.3 1 2.5h6c0-1.2.3-1.8 1-2.5A6 6 0 0012 3z"/></svg>
+        </span>
+        <h3>Strategy &amp; Discovery</h3>
+        <p>We help you clarify your vision, users, and roadmap for success.</p>
+      </div>
+      <div class="feature reveal d1">
+        <span class="ic">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 12l9 5 9-5M3 16l9 5 9-5"/></svg>
+        </span>
+        <h3>Design &amp; Experience</h3>
+        <p>Beautiful, intuitive experiences that people love to use.</p>
+      </div>
+      <div class="feature reveal d2">
+        <span class="ic">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M13 6l-2 12"/></svg>
+        </span>
+        <h3>Engineering &amp; AI</h3>
+        <p>Robust, scalable systems powered by modern technology.</p>
+      </div>
+      <div class="feature reveal d3">
+        <span class="ic">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15c-1 1-2 4-2 4s3-1 4-2m-2-2c0-4 3-9 9-11 0 6-3 9-7 11m-2 0l-2-2"/><path d="M14 5c2 0 4 0 5 1s1 3 1 5"/></svg>
+        </span>
+        <h3>Launch &amp; Growth</h3>
+        <p>We launch with you and help your product grow and thrive.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PRODUCTS -->
+<section class="section featured">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Products We've Built</span>
+      <h2 class="h-lg">Real solutions. Real impact.</h2>
+    </div>
+    <div class="grid fp-grid">
+      <article class="fp reveal">
+        <div class="fp-vis"><div data-mock="shidduch"></div></div>
+        <div class="fp-body">
+          <span class="fp-cat">Community</span>
+          <h3>Shidduch App</h3>
+          <p>Matchmaking infrastructure built with care and privacy at its core.</p>
+          <a class="link-gold" href="products.html">View Product <svg class="arr" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="fp reveal d1">
+        <div class="fp-vis"><div data-mock="parnasa"></div></div>
+        <div class="fp-body">
+          <span class="fp-cat">Opportunities</span>
+          <h3>Yad Parnasa</h3>
+          <p>Employment and opportunity platforms that open doors and create dignity.</p>
+          <a class="link-gold" href="products.html">View Product <svg class="arr" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="fp reveal d2">
+        <div class="fp-vis"><div data-mock="gemach"></div></div>
+        <div class="fp-body">
+          <span class="fp-cat">Resource Sharing</span>
+          <h3>Gemach Network</h3>
+          <p>Resource sharing that builds trust and strengthens communities.</p>
+          <a class="link-gold" href="products.html">View Product <svg class="arr" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+    </div>
+    <div style="text-align:center;margin-top:50px" class="reveal">
+      <a class="link-gold" href="products.html" style="font-size:0.82rem" data-analytics="cta_view_all_products">View All Products <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY PARTNER -->
+<section class="section on-dark why">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Why Organizations Partner With Oir</span>
+      <h2 class="h-lg">A partner you can build on.</h2>
+    </div>
+    <div class="grid cols-4 divided features">
+      <div class="feature reveal">
+        <span class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span>
+        <h3>Privacy First</h3>
+        <p>Security and privacy are built into everything we do — not bolted on after.</p>
+      </div>
+      <div class="feature reveal d1">
+        <span class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16M7 16l4-5 3 3 5-7"/></svg></span>
+        <h3>Built To Scale</h3>
+        <p>We build systems that grow with your mission, from first user to millions.</p>
+      </div>
+      <div class="feature reveal d2">
+        <span class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3 19c0-3 2.5-5 6-5s6 2 6 5M15.5 14c2.6.2 4.5 2 4.5 5"/></svg></span>
+        <h3>Community Focused</h3>
+        <p>We understand communities and the real impact good software can create.</p>
+      </div>
+      <div class="feature reveal d3">
+        <span class="ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12l3 3 5-6M3 10l4-4 3 2M21 10l-4-4-2 1.3"/><path d="M3 10v3l5 5 4-2 4 2 5-5v-3"/></svg></span>
+        <h3>Long-Term Partners</h3>
+        <p>We're with you for the long haul — not just through the launch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section final-cta">
+  <div class="fc-arc"></div><div class="fc-arc two"></div>
+  <div class="wrap fc-inner reveal">
+    <span class="burst">
+      <svg viewBox="0 0 80 80" fill="none"><path d="M40 4 L44 36 L76 40 L44 44 L40 76 L36 44 L4 40 L36 36 Z" fill="currentColor"/></svg>
+    </span>
+    <div>
+      <h2 class="serif">You have a mission.<br>We have the technology to help you achieve it.</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px;align-items:flex-start">
+      <p class="muted" style="margin:0;max-width:260px">Let's build something extraordinary together.</p>
+      <a class="btn btn-gold btn-lg" href="start-a-project.html" data-analytics="cta_final_talk">Let's Talk About Your Project <svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<footer id="site-footer"></footer>
+<script src="assets/oir-mockups.js"></script>
+<script src="assets/oir-tweaks.js"></script>
+<script src="assets/oir.js"></script>
+</body>
+</html>

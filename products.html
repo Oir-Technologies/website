@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products — Oir Technologies</title>
+<meta name="description" content="Purpose-built software for communities, organizations, and meaningful work — designed with care, privacy, and real-world impact.">
+<link rel="canonical" href="https://oirtechnologies.com/products.html">
+<meta name="theme-color" content="#07111F">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="apple-touch-icon" href="assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Oir Technologies">
+<meta property="og:title" content="Our Products — Purpose-Built Software | Oir Technologies">
+<meta property="og:description" content="Seven purpose-built products for communities, organizations, and meaningful work — all on one secure platform.">
+<meta property="og:url" content="https://oirtechnologies.com/products.html">
+<meta property="og:image" content="https://oirtechnologies.com/assets/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Our Products — Purpose-Built Software | Oir Technologies">
+<meta name="twitter:description" content="Seven purpose-built products for communities, organizations, and meaningful work — all on one secure platform.">
+<meta name="twitter:image" content="https://oirtechnologies.com/assets/og-image.svg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CollectionPage","name":"Our Products — Oir Technologies","url":"https://oirtechnologies.com/products.html","hasPart":{"@type":"ItemList","itemListElement":[{"@type":"ListItem","position":1,"name":"Shidduch App","url":"https://oirtechnologies.com/product-shidduch.html"},{"@type":"ListItem","position":2,"name":"Yad Parnasa","url":"https://oirtechnologies.com/product-yad-parnasa.html"},{"@type":"ListItem","position":3,"name":"Yad Chesed","url":"https://oirtechnologies.com/product-yad-chesed.html"},{"@type":"ListItem","position":4,"name":"Hachnosas Kallah","url":"https://oirtechnologies.com/product-hachnosas-kallah.html"},{"@type":"ListItem","position":5,"name":"Gemach Network","url":"https://oirtechnologies.com/product-gemach-network.html"},{"@type":"ListItem","position":6,"name":"Neshamah","url":"https://oirtechnologies.com/product-neshamah.html"},{"@type":"ListItem","position":7,"name":"Mitzvah Reminder","url":"https://oirtechnologies.com/product-mitzvah-reminder.html"}]}}
+</script>
+<script defer src="assets/analytics.js"></script>
+<link rel="stylesheet" href="assets/oir.css">
+<link rel="stylesheet" href="assets/oir-mockups.css">
+<style>
+  /* ============================================================
+     PRODUCTS — premium portfolio
+     navy hero · ivory featured · ivory-2 portfolio · navy platform · ivory cta
+     ============================================================ */
+
+  /* ---------- Hero ----------
+     The site header is a transparent, sticky bar that should OVERLAY the navy
+     hero (so the ivory nav reads on navy). Because the header reserves space in
+     normal flow, we pull the hero up under it by the header height (--hh) and
+     pad the content back down so nothing tucks beneath the bar. */
+  body[data-page="products"] { --hh: 84px; }
+  @media (max-width: 620px) { body[data-page="products"] { --hh: 70px; } }
+
+  .phero { position: relative; background: var(--navy); color: var(--ivory); overflow: hidden;
+    margin-top: calc(-1 * var(--hh, 84px)); }
+  .phero::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(58% 70% at 90% 4%, rgba(201,168,106,.12), transparent 56%),
+      radial-gradient(46% 62% at 0% 100%, rgba(16,35,63,.66), transparent 60%);
+  }
+  .phero-inner {
+    position: relative; display: grid; grid-template-columns: 1.04fr 1fr;
+    gap: 56px; align-items: center; min-height: 86vh;
+    padding-block: calc(var(--hh, 84px) + 30px) 96px;
+  }
+  .phero h1 { font-size: clamp(3rem, 6vw, 5.6rem); line-height: 1.0; letter-spacing: -0.02em; padding-bottom: .06em; }
+  .phero .lead { max-width: 482px; margin-top: 30px; color: rgba(250,250,248,.74); }
+  .phero .cta-row { display: flex; gap: 14px; margin-top: 44px; flex-wrap: wrap; }
+
+  /* one elegant ecosystem composition — laptop + a single phone + gold orbit arc */
+  .pscene { position: relative; height: 100%; min-height: 430px; }
+  .pscene .arc {
+    position: absolute; width: 92%; height: 92%; right: -6%; top: 6%;
+    border: 1.5px solid transparent;
+    border-top-color: rgba(201,168,106,.5);
+    border-right-color: rgba(201,168,106,.26);
+    border-radius: 50%; transform: rotate(-26deg); pointer-events: none;
+  }
+  .pscene .lap { position: absolute; right: -3%; top: 9%; width: 86%; z-index: 2;
+    filter: drop-shadow(0 40px 72px rgba(0,0,0,.52)); }
+  .pscene .ph  { position: absolute; left: -2%; bottom: -3%; width: 30%; z-index: 3; }
+  @media (max-width: 980px) {
+    .phero-inner { grid-template-columns: 1fr; min-height: auto; gap: 10px; padding-block: calc(var(--hh, 84px) + 24px) 66px; }
+    .pscene { min-height: 62vw; margin-top: 26px; }
+    .pscene .lap { width: 78%; right: 0; top: 2%; }
+    .pscene .ph  { width: 26%; left: 0; bottom: 0; }
+    .pscene .arc { top: 0; }
+  }
+
+  /* ---------- Section intro (shared) ---------- */
+  .p-intro { max-width: 760px; }
+  .p-intro .eyebrow { display: block; margin-bottom: 22px; }
+  .p-intro p { color: var(--ink-soft); font-size: 1.12rem; line-height: 1.62; margin: 22px 0 0; max-width: 56ch; }
+
+  /* ---------- Flagship — large editorial case-study rows ---------- */
+  .feat {
+    display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 5.5vw, 92px);
+    align-items: center; padding-block: clamp(54px, 6vw, 100px); border-top: 1px solid var(--line-light);
+  }
+  .feat.first { border-top: none; padding-top: clamp(40px, 4.5vw, 64px); }
+  .feat.rev { direction: rtl; } .feat.rev > * { direction: ltr; }
+  .fv {
+    border-radius: var(--radius-lg); padding: clamp(36px, 4.6vw, 70px);
+    display: grid; place-items: center; box-shadow: var(--shadow-card);
+    background: linear-gradient(160deg, #f4f5f7, #e9ebef);
+  }
+  .fv.dark  { background: linear-gradient(160deg, #0e1d33, #07111f); box-shadow: 0 40px 90px -40px rgba(7,17,31,.55); }
+  .fv.green { background: linear-gradient(160deg, #e8efe9, #dbe6dd); }
+  .fv [data-mock] { width: clamp(196px, 56%, 240px); }
+  .fc .idx { font-family: var(--serif); font-size: 1.05rem; color: var(--gold-deep); letter-spacing: .04em; }
+  .fc .cat { display: block; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-deep); font-weight: 600; margin-top: 14px; }
+  .fc h2 { font-size: clamp(2.1rem, 3.6vw, 3rem); margin-top: 12px; }
+  .fc p { color: var(--ink-soft); font-size: 1.13rem; margin-top: 20px; max-width: 46ch; line-height: 1.64; }
+  .fc .link-gold { margin-top: 28px; }
+  @media (max-width: 860px) { .feat { grid-template-columns: 1fr; gap: 32px; } .feat.rev { direction: ltr; } }
+
+  /* ---------- Full portfolio — calm editorial index (not a grid) ---------- */
+  .suite { background: var(--ivory-2); }
+  .plist { margin-top: 40px; border-top: 1px solid var(--line-light); }
+  .prow {
+    display: grid; grid-template-columns: 128px 1fr auto; align-items: center;
+    gap: clamp(22px, 3.2vw, 50px); padding: clamp(26px, 3vw, 40px) clamp(8px, 1.6vw, 26px);
+    border-bottom: 1px solid var(--line-light); color: inherit;
+    transition: background .4s cubic-bezier(.2,.7,.2,1);
+  }
+  .prow:hover { background: rgba(255,255,255,.6); }
+  .prow .pthumb { display: grid; place-items: center; }
+  .prow .pthumb [data-mock] { width: 104px; transition: transform .5s cubic-bezier(.2,.7,.2,1); }
+  .prow:hover .pthumb [data-mock] { transform: translateY(-4px); }
+  .prow .pcat { font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-deep); font-weight: 600; }
+  .prow h3 { font-size: clamp(1.5rem, 2.4vw, 2.05rem); margin-top: 9px; }
+  .prow .pdesc { color: var(--ink-soft); font-size: 1.02rem; margin-top: 11px; max-width: 54ch; line-height: 1.58; }
+  .prow .pgo {
+    width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--line-light);
+    color: var(--gold-deep); display: grid; place-items: center; flex: none;
+    transition: background .3s, color .3s, border-color .3s, transform .3s;
+  }
+  .prow:hover .pgo { background: var(--navy); color: var(--gold); border-color: var(--navy); }
+  .prow:hover .pgo .arr { transform: translateX(4px); }
+  @media (max-width: 720px) {
+    .prow { grid-template-columns: 84px 1fr; gap: 20px 22px; padding-inline: 4px; }
+    .prow .pthumb [data-mock] { width: 78px; }
+    .prow .pgo { display: none; }
+  }
+
+  /* ---------- Platform note — high-level infrastructure band ---------- */
+  .platband { position: relative; background: var(--navy); color: var(--ivory); overflow: hidden; }
+  .platband::before { content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(60% 80% at 50% -10%, rgba(201,168,106,.10), transparent 60%); }
+  .platband .pb-inner { position: relative; text-align: center; max-width: 880px; margin-inline: auto; }
+  .platband h2 { font-size: clamp(2rem, 3.6vw, 3.1rem); }
+  .platband h2 em { color: var(--gold); font-style: italic; }
+  .platband .lead { color: rgba(250,250,248,.74); max-width: 640px; margin: 22px auto 0; }
+  .pservices { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 40px auto 0; max-width: 720px; }
+  .pservices span {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 18px; border-radius: 100px;
+    background: rgba(255,255,255,.045); border: 1px solid rgba(255,255,255,.1);
+    font-size: 0.86rem; font-weight: 500; color: rgba(250,250,248,.88); backdrop-filter: blur(6px);
+  }
+  .pservices span::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex: none; }
+  .platband .pb-link { margin-top: 40px; }
+  .platband .pb-link .link-gold { color: var(--gold); }
+
+  /* ---------- Final CTA — light, open, inviting ---------- */
+  .pcta { position: relative; background: var(--ivory); overflow: hidden; }
+  .pcta .arc1, .pcta .arc2 { position: absolute; border: 1px solid var(--line); border-radius: 50%; pointer-events: none; }
+  .pcta .arc1 { right: -120px; bottom: -170px; width: 360px; height: 360px; }
+  .pcta .arc2 { right: -160px; bottom: -210px; width: 470px; height: 470px; }
+  .pcta .pcta-inner { position: relative; display: grid; grid-template-columns: auto 1fr auto; gap: 52px; align-items: center; }
+  .pcta .burst { width: 84px; color: var(--gold); flex: none; }
+  .pcta h2 { font-size: clamp(2rem, 3.2vw, 2.8rem); line-height: 1.1; }
+  .pcta p { color: var(--gray); margin: 0; max-width: 290px; }
+  @media (max-width: 900px) {
+    .pcta .pcta-inner { grid-template-columns: 1fr; gap: 26px; }
+    .pcta .burst { width: 60px; }
+  }
+</style>
+</head>
+<body data-page="products">
+<header id="site-header"></header>
+
+<!-- ============ HERO ============ -->
+<section class="phero" data-screen-label="Products — Hero">
+  <div class="wrap-wide phero-inner">
+    <div class="phero-copy">
+      <span class="eyebrow on-dark reveal">Our Products</span>
+      <h1 class="reveal d1" style="margin-top:18px">Our Products</h1>
+      <p class="lead reveal d2">Purpose-built software for communities, organizations, and meaningful work — each one designed with care, privacy, and real-world impact in mind.</p>
+      <div class="cta-row reveal d3">
+        <a class="btn btn-gold btn-lg" href="start-a-project.html">Start a Project <svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost btn-lg" href="#flagship">Explore Products</a>
+      </div>
+    </div>
+    <div class="pscene reveal d2">
+      <div class="arc"></div>
+      <div class="lap" data-laptop></div>
+      <div class="ph" data-mock="shidduch"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FLAGSHIP PRODUCTS ============ -->
+<section class="section-sm" id="flagship" style="padding-top:clamp(80px,8vw,120px);scroll-margin-top:96px">
+  <div class="wrap">
+    <div class="p-intro reveal" style="margin-bottom:8px">
+      <span class="eyebrow">Flagship Products</span>
+      <h2 class="h-lg">Software communities rely on.</h2>
+      <p>A closer look at three products already in people's hands — built on one shared foundation, each solving a real problem with restraint and craft.</p>
+    </div>
+
+    <!-- 01 — Shidduch App -->
+    <div class="feat first reveal">
+      <div class="fv dark"><div data-mock="shidduch"></div></div>
+      <div class="fc">
+        <span class="idx">01</span>
+        <span class="cat">Community · Matchmaking</span>
+        <h2>Shidduch App</h2>
+        <p>Matchmaking infrastructure built with care, dignity, and uncompromising privacy — connecting singles and shadchanim on a foundation they can trust.</p>
+        <a class="link-gold" href="product-shidduch.html" data-analytics="product_explore_shidduch">Explore the product <svg class="arr" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+
+    <!-- 02 — Yad Parnasa -->
+    <div class="feat rev reveal">
+      <div class="fv"><div data-mock="parnasa"></div></div>
+      <div class="fc">
+        <span class="idx">02</span>
+        <span class="cat">Opportunities · Employment</span>
+        <h2>Yad Parnasa</h2>
+        <p>An employment platform that opens doors and restores dignity through work — curated roles, intelligent matching, and a respectful path from posting to hire.</p>
+        <a class="link-gold" href="product-yad-parnasa.html" data-analytics="product_explore_parnasa">Explore the product <svg class="arr" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+
+    <!-- 03 — Gemach Network -->
+    <div class="feat reveal">
+      <div class="fv green"><div data-mock="gemach"></div></div>
+      <div class="fc">
+        <span class="idx">03</span>
+        <span class="cat">Resource Sharing · Network</span>
+        <h2>Gemach Network</h2>
+        <p>A shared map of generosity that connects neighbors with the resources they offer — every gemach independent, yet discoverable together.</p>
+        <a class="link-gold" href="product-gemach-network.html" data-analytics="product_explore_gemach">Explore the product <svg class="arr" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FULL PORTFOLIO ============ -->
+<section class="section-sm suite" style="padding-block:clamp(72px,8vw,104px)">
+  <div class="wrap">
+    <div class="p-intro reveal">
+      <span class="eyebrow">The Full Suite</span>
+      <h2 class="h-lg">Seven products, one foundation.</h2>
+      <p>Every Oir product is purpose-built for a specific need — and every one stands on the same secure platform.</p>
+    </div>
+
+    <div class="plist">
+      <a class="prow reveal" href="product-shidduch.html" data-analytics="product_card_shidduch">
+        <div class="pthumb"><div data-mock="shidduch"></div></div>
+        <div class="ptext">
+          <div class="pcat">Community · Matchmaking</div>
+          <h3>Shidduch App</h3>
+          <p class="pdesc">Matchmaking built with care, dignity, and uncompromising privacy at its core.</p>
+        </div>
+        <span class="pgo"><svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="prow reveal" href="product-yad-parnasa.html" data-analytics="product_card_parnasa">
+        <div class="pthumb"><div data-mock="parnasa"></div></div>
+        <div class="ptext">
+          <div class="pcat">Opportunities · Employment</div>
+          <h3>Yad Parnasa</h3>
+          <p class="pdesc">An employment platform that opens doors and restores dignity through work.</p>
+        </div>
+        <span class="pgo"><svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="prow reveal" href="product-yad-chesed.html" data-analytics="product_card_chesed">
+        <div class="pthumb"><div data-mock="chesed"></div></div>
+        <div class="ptext">
+          <div class="pcat">Support &amp; Chesed</div>
+          <h3>Yad Chesed</h3>
+          <p class="pdesc">Coordinating everyday acts of kindness across a whole community.</p>
+        </div>
+        <span class="pgo"><svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="prow reveal" href="product-hachnosas-kallah.html" data-analytics="product_card_kallah">
+        <div class="pthumb"><div data-mock="kallah"></div></div>
+        <div class="ptext">
+          <div class="pcat">Support &amp; Chesed</div>
+          <h3>Hachnosas Kallah</h3>
+          <p class="pdesc">Helping families celebrate with dignity, supported every step of the way.</p>
+        </div>
+        <span class="pgo"><svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="prow reveal" href="product-gemach-network.html" data-analytics="product_card_gemach">
+        <div class="pthumb"><div data-mock="gemach"></div></div>
+        <div class="ptext">
+          <div class="pcat">Resource Sharing · Network</div>
+          <h3>Gemach Network</h3>
+          <p class="pdesc">A shared map of generosity that connects neighbors with what they need.</p>
+        </div>
+        <span class="pgo"><svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="prow reveal" href="product-neshamah.html" data-analytics="product_card_neshamah">
+        <div class="pthumb"><div data-mock="neshamah"></div></div>
+        <div class="ptext">
+          <div class="pcat">Legacy &amp; Inspiration</div>
+          <h3>Neshamah</h3>
+          <p class="pdesc">Honoring legacies and keeping cherished memories alive.</p>
+        </div>
+        <span class="pgo"><svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+
+      <a class="prow reveal" href="product-mitzvah-reminder.html" data-analytics="product_card_mitzvah">
+        <div class="pthumb"><div data-mock="mitzvah"></div></div>
+        <div class="ptext">
+          <div class="pcat">Legacy &amp; Inspiration</div>
+          <h3>Mitzvah Reminder</h3>
+          <p class="pdesc">Gentle daily inspiration that turns good intentions into action.</p>
+        </div>
+        <span class="pgo"><svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLATFORM NOTE ============ -->
+<section class="section-sm platband">
+  <div class="wrap pb-inner reveal">
+    <span class="eyebrow on-dark">One Foundation</span>
+    <h2 class="serif" style="margin-top:18px">Built on the <em>Apps Platform.</em></h2>
+    <p class="lead">Every product shares one secure core — so each launches faster, stays consistent, and earns trust from day one.</p>
+    <div class="pservices">
+      <span>Identity</span>
+      <span>Privacy</span>
+      <span>Permissions</span>
+      <span>Notifications</span>
+      <span>Storage</span>
+      <span>Audit</span>
+      <span>Organizations</span>
+    </div>
+    <div class="pb-link">
+      <a class="link-gold" href="platform.html">Explore the platform <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="section-sm pcta">
+  <div class="arc1"></div><div class="arc2"></div>
+  <div class="wrap pcta-inner reveal">
+    <span class="burst">
+      <svg viewBox="0 0 80 80" fill="none"><path d="M40 4 L44 36 L76 40 L44 44 L40 76 L36 44 L4 40 L36 36 Z" fill="currentColor"/></svg>
+    </span>
+    <div>
+      <h2 class="serif">Have an idea worth building?</h2>
+      <p style="margin-top:14px;max-width:560px;color:var(--ink-soft)">We partner with founders, organizations, and businesses to design, build, and launch software people rely on.</p>
+    </div>
+    <div>
+      <a class="btn btn-gold btn-lg" href="start-a-project.html">Let's Build Together <svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<footer id="site-footer"></footer>
+<script src="assets/oir-mockups.js"></script>
+<script src="assets/oir-tweaks.js"></script>
+<script src="assets/oir.js"></script>
+</body>
+</html>

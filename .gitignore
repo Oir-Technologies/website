@@ -1,0 +1,11 @@
+# Design handoff bundle (reference only — never deploy)
+_design_extract/
+design_response.txt
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.log
+
+# Local preview tooling
+.claude/launch.json

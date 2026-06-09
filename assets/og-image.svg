@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Oir Technologies — Building technology that moves communities and organizations forward">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a1626"/>
+      <stop offset="1" stop-color="#07111F"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.86" cy="0.12" r="0.6">
+      <stop offset="0" stop-color="#C9A86A" stop-opacity="0.20"/>
+      <stop offset="1" stop-color="#C9A86A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <!-- orbit arc -->
+  <circle cx="1010" cy="120" r="360" fill="none" stroke="#C9A86A" stroke-opacity="0.22" stroke-width="1.5"/>
+  <!-- brand mark -->
+  <path d="M96 92 L101 121 L130 126 L101 131 L96 160 L91 131 L62 126 L91 121 Z" fill="#C9A86A"/>
+  <text x="150" y="124" font-family="Georgia, 'Times New Roman', serif" font-size="40" letter-spacing="10" fill="#FAFAF8">OIR</text>
+  <text x="152" y="150" font-family="Helvetica, Arial, sans-serif" font-size="15" letter-spacing="9" fill="#d9c096">TECHNOLOGIES</text>
+  <!-- headline -->
+  <text x="96" y="320" font-family="Georgia, 'Times New Roman', serif" font-size="74" fill="#FAFAF8">Building technology</text>
+  <text x="96" y="408" font-family="Georgia, 'Times New Roman', serif" font-size="74" fill="#FAFAF8">that moves communities</text>
+  <text x="96" y="496" font-family="Georgia, 'Times New Roman', serif" font-size="74" fill="#FAFAF8">&amp; organizations <tspan fill="#C9A86A" font-style="italic">forward.</tspan></text>
+  <!-- footer line -->
+  <rect x="96" y="556" width="54" height="3" fill="#C9A86A"/>
+  <text x="170" y="565" font-family="Helvetica, Arial, sans-serif" font-size="22" letter-spacing="2" fill="#9aa1ac">Premium software for communities, organizations &amp; businesses</text>
+</svg>

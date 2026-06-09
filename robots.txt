@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /_design_extract/
+
+Sitemap: https://oirtechnologies.com/sitemap.xml

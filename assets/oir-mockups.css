@@ -1,0 +1,206 @@
+/* ============================================================
+   OIR — Product Mockups (clean, premium product screenshots)
+   ============================================================ */
+
+.mock { position: relative; width: 100%; }
+.mock * { box-sizing: border-box; }
+.mock .psizer { position: relative; width: 100%; }
+.mock.is-phone .psizer { aspect-ratio: 230 / 466; }
+
+/* ---- Phone frame (fixed intrinsic width, scaled to container via JS) ---- */
+.phone {
+  position: absolute; top: 0; left: 0; width: 230px; transform-origin: top left;
+  border-radius: 36px; background: #0b1422;
+  padding: 9px; box-shadow: 0 34px 80px -30px rgba(7,17,31,.6), 0 2px 6px rgba(0,0,0,.3);
+  border: 1px solid rgba(255,255,255,.06);
+}
+.phone .screen {
+  border-radius: 28px; overflow: hidden; background: #fff; position: relative;
+  width: 100%; aspect-ratio: 9/19;
+}
+.phone .notch {
+  position: absolute; top: 14px; left: 50%; transform: translateX(-50%);
+  width: 58px; height: 6px; border-radius: 6px; background: rgba(0,0,0,.16); z-index: 5;
+}
+.status {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 13px 20px 6px; font-size: 11px; font-weight: 600; color: var(--scr-ink, #0c1626);
+}
+.status .dots { display: flex; gap: 4px; align-items: center; }
+.status .dots i { width: 4px; height: 4px; border-radius: 50%; background: currentColor; opacity: .5; font-style: normal; }
+
+.pill { display: inline-flex; align-items: center; gap: 5px; padding: 4px 9px; border-radius: 100px; font-size: 9.5px; font-weight: 600; }
+
+/* shared clean screen shell */
+.sg { font-family: "Inter", sans-serif; height: 100%; display: flex; flex-direction: column; }
+.sg .body { flex: 1; }
+
+/* ===== 1. Shidduch — a single elegant match ===== */
+.m-shidduch .screen { background: #0b1626; --scr-ink: #f3f1ea; }
+.m-shidduch .sg { color: #f3f1ea; }
+.m-shidduch .body { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 6px 22px; }
+.m-shidduch .ey { font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 22px; }
+.m-shidduch .ava { width: 108px; height: 108px; border-radius: 50%;
+  background: radial-gradient(120% 90% at 32% 22%, rgba(201,168,106,.42), transparent 55%), linear-gradient(140deg, #2a3a55, #46395b);
+  box-shadow: 0 0 0 4px rgba(201,168,106,.16), 0 16px 30px -14px rgba(0,0,0,.5); margin-bottom: 18px; }
+.m-shidduch .nm { font-size: 20px; font-weight: 700; letter-spacing: -.01em; }
+.m-shidduch .mt { font-size: 11.5px; color: #9fb0c8; margin-top: 4px; }
+.m-shidduch .al { margin-top: 16px; font-size: 10px; font-weight: 600; color: var(--gold); border: 1px solid rgba(201,168,106,.4); padding: 6px 13px; border-radius: 100px; }
+.m-shidduch .cta-bar { margin: 0 20px 22px; text-align: center; background: var(--gold); color: #0b1626; font-size: 12px; font-weight: 600; padding: 14px; border-radius: 13px; }
+
+/* ===== 2. Yad Parnasa — greeting + one opportunity ===== */
+.m-parnasa .screen { background: #f4f6f8; }
+.m-parnasa .hdr { padding: 10px 22px 0; }
+.m-parnasa .hello { font-size: 11px; color: #8a93a3; }
+.m-parnasa .big { font-size: 19px; font-weight: 700; color: #15233b; line-height: 1.28; margin-top: 8px; letter-spacing: -.015em; }
+.m-parnasa .big b { color: #a8854a; }
+.m-parnasa .body { padding: 20px 22px; display: flex; align-items: flex-start; }
+.m-parnasa .card { background: #fff; border-radius: 18px; padding: 20px; width: 100%; box-shadow: 0 18px 36px -20px rgba(12,22,38,.26); }
+.m-parnasa .logo { width: 42px; height: 42px; border-radius: 12px; background: #16273f; color: #fff; display: grid; place-items: center; font-weight: 700; font-size: 16px; }
+.m-parnasa .t { font-size: 15.5px; font-weight: 700; color: #15233b; margin-top: 16px; }
+.m-parnasa .c { font-size: 11px; color: #8a93a3; margin-top: 4px; }
+.m-parnasa .tags { display: flex; gap: 7px; margin-top: 16px; }
+.m-parnasa .tags span { font-size: 10px; font-weight: 600; padding: 6px 12px; border-radius: 100px; background: #eef1f6; color: #5a6677; }
+.m-parnasa .tags span.g { background: rgba(201,168,106,.16); color: #a8854a; }
+
+/* ===== 3. Yad Chesed — impact number + two requests ===== */
+.m-chesed .screen { background: #f3f6f3; }
+.m-chesed .hdr { background: linear-gradient(150deg, #23492f, #2e5640); color: #fff; padding: 20px 22px 24px; border-radius: 0 0 24px 24px; }
+.m-chesed .hdr .lbl { font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.62); }
+.m-chesed .hdr .big { font-size: 42px; font-weight: 700; line-height: 1; margin-top: 8px; letter-spacing: -.01em; }
+.m-chesed .hdr .cap { font-size: 11px; color: rgba(255,255,255,.82); margin-top: 6px; }
+.m-chesed .body { padding: 16px; display: flex; flex-direction: column; gap: 11px; }
+.m-chesed .req { background: #fff; border-radius: 15px; padding: 14px; display: flex; align-items: center; gap: 12px; box-shadow: 0 12px 26px -20px rgba(12,22,38,.26); }
+.m-chesed .req .ic { width: 36px; height: 36px; border-radius: 11px; background: #eaf1ec; color: #2e5640; display: grid; place-items: center; flex: none; }
+.m-chesed .req b { font-size: 13px; color: #1d2c20; }
+.m-chesed .req span { display: block; font-size: 10px; color: #8a93a3; margin-top: 2px; }
+
+/* ===== 4. Hachnosas Kallah — celebratory card (kept clean) ===== */
+.m-kallah .screen { background: #f7f1ea; }
+.m-kallah .scene {
+  height: 100%; padding: 22px 18px;
+  background:
+    radial-gradient(80% 50% at 80% 0%, rgba(201,168,106,.18), transparent 60%),
+    radial-gradient(70% 40% at 10% 100%, rgba(201,168,106,.12), transparent 60%),
+    #f7f1ea;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.m-kallah .cardp { background: #fffdf9; border: 1px solid rgba(201,168,106,.3); border-radius: 20px; padding: 26px 20px; text-align: center; box-shadow: 0 16px 38px -22px rgba(120,90,40,.4); }
+.m-kallah .floral { width: 40px; height: 40px; margin: 0 auto 14px; color: #c9a86a; }
+.m-kallah .mz { font-family: "DM Serif Display","Cormorant Garamond",serif; font-size: 27px; color: #2a2018; }
+.m-kallah .sub { font-size: 11px; color: #9a8e7c; margin-top: 6px; }
+.m-kallah .rule { height: 1px; background: rgba(201,168,106,.4); margin: 18px 8px; }
+.m-kallah .date-l { font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: #b09a72; }
+.m-kallah .date { font-family: "DM Serif Display",serif; font-size: 18px; color: #2a2018; margin-top: 3px; }
+.m-kallah .steps { display: flex; justify-content: space-between; margin-top: 24px; padding: 0 4px; }
+.m-kallah .steps .st { text-align: center; flex: 1; position: relative; }
+.m-kallah .steps .st .dot { width: 18px; height: 18px; border-radius: 50%; margin: 0 auto 6px; background: #e4dccd; color: #fff; display: grid; place-items: center; font-size: 9px; }
+.m-kallah .steps .st.done .dot { background: var(--gold); }
+.m-kallah .steps .st span { font-size: 8.5px; color: #9a8e7c; }
+.m-kallah .steps .st::before { content: ""; position: absolute; top: 9px; left: -50%; width: 100%; height: 1.5px; background: #e4dccd; z-index: -1; }
+.m-kallah .steps .st:first-child::before { display: none; }
+.m-kallah .steps .st.done::before { background: var(--gold); }
+
+/* ===== 5. Gemach Network — map + one item (lightened) ===== */
+.m-gemach .screen { background: #eaeef0; }
+.m-gemach .map {
+  height: 64%; position: relative; overflow: hidden;
+  background:
+    linear-gradient(0deg, transparent 49%, rgba(120,140,160,.1) 50%, transparent 51%) 0 0/100% 30px,
+    linear-gradient(90deg, transparent 49%, rgba(120,140,160,.1) 50%, transparent 51%) 0 0/30px 100%,
+    linear-gradient(135deg, #dfe6ea, #eef2f4);
+}
+.m-gemach .road { position: absolute; background: #fff; box-shadow: 0 0 0 1px rgba(120,140,160,.1); }
+.m-gemach .road.r1 { height: 9px; width: 130%; top: 32%; left: -10%; transform: rotate(-8deg); }
+.m-gemach .road.r2 { width: 9px; height: 130%; left: 42%; top: -10%; transform: rotate(6deg); }
+.m-gemach .road.r3 { height: 7px; width: 130%; top: 72%; left: -10%; transform: rotate(5deg); }
+.m-gemach .pin { position: absolute; width: 26px; height: 26px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); background: var(--gold); border: 2px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,.2); }
+.m-gemach .pin i { position: absolute; inset: 0; margin: auto; width: 7px; height: 7px; border-radius: 50%; background: #fff; transform: rotate(45deg); }
+.m-gemach .pin.navy { background: #16273f; }
+.m-gemach .pin.p1 { top: 22%; left: 28%; }
+.m-gemach .pin.p2 { top: 42%; left: 60%; }
+.m-gemach .pin.p3 { top: 66%; left: 34%; }
+.m-gemach .sheet { background: #fff; border-radius: 22px 22px 0 0; margin-top: -24px; position: relative; padding: 18px 18px 20px; box-shadow: 0 -8px 24px -16px rgba(0,0,0,.2); }
+.m-gemach .grab { width: 38px; height: 4px; border-radius: 4px; background: #d8dce2; margin: 0 auto 16px; }
+.m-gemach .item { display: flex; align-items: center; gap: 12px; }
+.m-gemach .item .th { width: 48px; height: 48px; border-radius: 13px; background: linear-gradient(135deg, #d9c79b, #b89a63); flex: none; }
+.m-gemach .item .tx b { font-size: 14px; color: #15233b; }
+.m-gemach .item .tx span { display: block; font-size: 10.5px; color: #8a93a3; margin-top: 2px; }
+.m-gemach .item .pill { margin-left: auto; background: rgba(201,168,106,.16); color: #a8854a; }
+.m-gemach .cap { font-size: 10.5px; color: #8a93a3; margin-top: 16px; text-align: center; }
+
+/* ===== 6. Neshamah — candle (kept) ===== */
+.m-neshamah .screen { background: radial-gradient(60% 50% at 50% 18%, #241c12, #0b0906 70%); }
+.m-neshamah .scr, .m-neshamah .sg { color: #ece4d4; }
+.m-neshamah .nshead { text-align: center; padding: 18px 18px 0; }
+.m-neshamah .nshead .hb { font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: #b79a64; }
+.m-neshamah .candle-wrap { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0; }
+.m-neshamah .flame {
+  width: 14px; height: 28px; border-radius: 50% 50% 50% 50%/ 64% 64% 36% 36%;
+  background: radial-gradient(circle at 50% 70%, #fff7e0, #ffcf6e 45%, #e8923a 80%);
+  box-shadow: 0 0 24px 8px rgba(255,180,90,.5), 0 0 60px 20px rgba(255,150,50,.22);
+  margin-bottom: -3px; animation: flick 3s ease-in-out infinite;
+}
+@keyframes flick { 0%,100%{ transform: translateY(0) scaleY(1); } 50%{ transform: translateY(-1px) scaleY(1.06); } }
+@media (prefers-reduced-motion: reduce){ .m-neshamah .flame{ animation: none; } }
+.m-neshamah .candle { width: 58px; height: 96px; border-radius: 8px 8px 4px 4px; background: linear-gradient(90deg, #6b5836, #9a824f 30%, #c9a86a 50%, #9a824f 70%, #6b5836); position: relative; }
+.m-neshamah .candle::before { content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 1.5px; height: 8px; background: #2a2114; }
+.m-neshamah .hb-name { text-align: center; margin-top: 24px; }
+.m-neshamah .hb-name .he { font-family: "DM Serif Display",serif; font-size: 22px; color: #e7d9b8; direction: rtl; }
+.m-neshamah .hb-name .en { font-size: 11px; color: #9a8e76; margin-top: 5px; }
+.m-neshamah .ns-actions { display: flex; padding: 18px; }
+.m-neshamah .ns-actions .b { flex: 1; text-align: center; font-size: 11px; font-weight: 600; padding: 12px; border-radius: 11px; border: 1px solid rgba(201,168,106,.35); color: #d9c79b; }
+
+/* ===== 7. Mitzvah Reminder — big ring + two items ===== */
+.m-mitzvah .screen { background: #fbfaf7; }
+.m-mitzvah .hdr { padding: 12px 22px 0; }
+.m-mitzvah .hdr .dt { font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: #b09a72; font-weight: 600; }
+.m-mitzvah .ringwrap { display: flex; flex-direction: column; align-items: center; padding: 20px 0 6px; }
+.m-mitzvah .ring2 { width: 112px; height: 112px; border-radius: 50%; background: conic-gradient(var(--gold) 66%, #ece7dc 0); display: grid; place-items: center; }
+.m-mitzvah .ring2 span { width: 88px; height: 88px; border-radius: 50%; background: #fff; display: grid; place-items: center; font-size: 32px; font-weight: 700; color: #15233b; }
+.m-mitzvah .ring2 span i { font-style: normal; font-size: 16px; color: #b6bcc6; }
+.m-mitzvah .cap { font-size: 12px; color: #6b7280; margin-top: 16px; }
+.m-mitzvah .body { padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; }
+.m-mitzvah .ck { display: flex; align-items: center; gap: 12px; background: #fff; border-radius: 13px; padding: 14px 15px; box-shadow: 0 10px 22px -18px rgba(12,22,38,.22); }
+.m-mitzvah .ck .bx { width: 22px; height: 22px; border-radius: 7px; border: 1.5px solid #d8dce2; display: grid; place-items: center; color: #fff; flex: none; }
+.m-mitzvah .ck.on .bx { background: var(--gold); border-color: var(--gold); }
+.m-mitzvah .ck b { font-size: 13px; color: #15233b; font-weight: 600; }
+.m-mitzvah .ck.on b { color: #9aa1ac; text-decoration: line-through; }
+
+/* ---- floating chip nodes for platform diagram ---- */
+.node {
+  display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px;
+  background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1);
+  border-radius: 100px; backdrop-filter: blur(6px); color: var(--ivory);
+  font-size: 0.86rem; font-weight: 500;
+}
+.node .d { width: 28px; height: 28px; border-radius: 8px; background: rgba(201,168,106,.16); color: var(--gold); display: grid; place-items: center; flex: none; }
+.node.core { background: var(--gold); color: var(--navy); border-color: var(--gold); font-weight: 600; padding: 16px 26px; }
+.node.core .d { background: rgba(7,17,31,.12); color: var(--navy); }
+
+/* ---- Laptop frame (fixed intrinsic width, scaled to container via JS) ---- */
+.lap-mock { position: relative; width: 100%; }
+.lap-mock .psizer { position: relative; width: 100%; aspect-ratio: 460 / 308; }
+.laptop { position: absolute; top: 0; left: 0; width: 460px; transform-origin: top left; }
+.laptop .lid { background: #11151c; border-radius: 16px 16px 0 0; padding: 9px; border: 1px solid rgba(255,255,255,.08); border-bottom: none; }
+.laptop .lscreen { border-radius: 8px; overflow: hidden; background: #fff; aspect-ratio: 16/10; }
+.laptop .base { height: 13px; background: linear-gradient(180deg, #1a1f28, #0d1117); border-radius: 0 0 14px 14px; position: relative; }
+.laptop .base::after { content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 84px; height: 4px; border-radius: 0 0 6px 6px; background: rgba(0,0,0,.4); }
+
+/* dashboard mini (laptop content) — clean, fewer rows */
+.dash { display: grid; grid-template-columns: 66px 1fr; height: 100%; font-family: "Inter",sans-serif; }
+.dash .side { background: #0e1d33; padding: 16px 0; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.dash .side .lg { width: 22px; height: 22px; border-radius: 7px; background: var(--gold); }
+.dash .side i { width: 18px; height: 18px; border-radius: 6px; background: rgba(255,255,255,.1); font-style: normal; }
+.dash .side i.on { background: rgba(201,168,106,.4); }
+.dash .main { padding: 18px 20px; background: #f6f7f9; overflow: hidden; }
+.dash .main .dh { font-size: 14px; font-weight: 700; color: #15233b; }
+.dash .kpis { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: 14px; }
+.dash .kpi { background: #fff; border-radius: 11px; padding: 12px; box-shadow: 0 8px 18px -14px rgba(12,22,38,.2); }
+.dash .kpi .l { font-size: 8.5px; color: #8a93a3; }
+.dash .kpi .v { font-size: 18px; font-weight: 700; color: #15233b; margin-top: 3px; }
+.dash .kpi .c { font-size: 8.5px; color: #2e7d4f; margin-top: 2px; }
+.dash .panel { background: #fff; border-radius: 11px; margin-top: 12px; padding: 14px; box-shadow: 0 8px 18px -14px rgba(12,22,38,.18); }
+.dash .panel .pt { font-size: 9.5px; font-weight: 700; color: #15233b; margin-bottom: 10px; }
+.dash .spark { height: 46px; display: flex; align-items: flex-end; gap: 4px; }
+.dash .spark b { flex: 1; background: linear-gradient(180deg,#c9a86a,#e3cfa1); border-radius: 3px 3px 0 0; }

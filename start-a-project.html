@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Start a Project — Oir Technologies</title>
+<meta name="description" content="Tell us about your project. Let's build something extraordinary together.">
+<link rel="canonical" href="https://oirtechnologies.com/start-a-project.html">
+<meta name="theme-color" content="#07111F">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="apple-touch-icon" href="assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Oir Technologies">
+<meta property="og:title" content="Start a Project — Let's Build Together | Oir Technologies">
+<meta property="og:description" content="Tell us about your project. We partner with founders, nonprofits, organizations, and businesses to build software people rely on.">
+<meta property="og:url" content="https://oirtechnologies.com/start-a-project.html">
+<meta property="og:image" content="https://oirtechnologies.com/assets/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Start a Project — Let's Build Together | Oir Technologies">
+<meta name="twitter:description" content="Tell us about your project. We partner with founders, nonprofits, organizations, and businesses to build software people rely on.">
+<meta name="twitter:image" content="https://oirtechnologies.com/assets/og-image.svg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ContactPage","name":"Start a Project — Oir Technologies","url":"https://oirtechnologies.com/start-a-project.html","publisher":{"@type":"Organization","name":"Oir Technologies"}}
+</script>
+<script defer src="assets/analytics.js"></script>
+<link rel="stylesheet" href="assets/oir.css">
+<link rel="stylesheet" href="assets/oir-mockups.css">
+<style>
+  .sp { background: var(--navy); color: var(--ivory); min-height: 100vh; }
+  .sp-grid { display:grid; grid-template-columns: 0.92fr 1.08fr; gap: clamp(40px,5vw,90px); padding-block: 70px 90px; align-items:start; }
+  .sp-left { position: sticky; top: 110px; }
+  .sp-left h1 { font-size: clamp(2.6rem,4.4vw,4rem); line-height:1.08; }
+  .sp-left h1 em { color: var(--gold); font-style:italic; }
+  .sp-left .lead { color: rgba(250,250,248,.74); max-width: 42ch; margin-top: 22px; }
+  .next { margin-top: 40px; display:flex; flex-direction:column; gap: 4px; }
+  .next .step { display:grid; grid-template-columns: 40px 1fr; gap: 16px; padding: 16px 0; border-top:1px solid var(--line-dark); align-items:start; }
+  .next .step:first-child { border-top:none; }
+  .next .n { width:34px; height:34px; border-radius:50%; border:1px solid var(--gold); color: var(--gold); display:grid; place-items:center; font-family:var(--serif); font-size:0.95rem; }
+  .next .step h4 { font-family:var(--body); font-weight:600; font-size:0.98rem; margin:4px 0 3px; }
+  .next .step p { margin:0; color: rgba(250,250,248,.6); font-size:0.88rem; }
+  .sp-contact { margin-top: 36px; padding-top: 26px; border-top:1px solid var(--line-dark); display:flex; gap: 30px; flex-wrap:wrap; }
+  .sp-contact a { color: var(--gold-soft); font-size:0.9rem; }
+  .sp-contact .lbl { color: var(--gray-light); font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; display:block; margin-bottom:5px; }
+
+  .form-card { background: #fff; border-radius: var(--radius-lg); padding: clamp(28px,3.5vw,44px); box-shadow: var(--shadow-float); color: var(--ink); }
+  .form-card .fc-title { font-family:var(--serif); font-size: 1.7rem; color: var(--ink); }
+  .form-card .fc-sub { color: var(--gray); font-size:0.92rem; margin: 6px 0 26px; }
+  .field { margin-bottom: 20px; }
+  .field label { display:block; font-size:0.74rem; letter-spacing:0.1em; text-transform:uppercase; color: var(--ink-soft); font-weight:600; margin-bottom: 9px; }
+  .field label .req { color: var(--gold-deep); }
+  .field input, .field select, .field textarea {
+    width:100%; font-family: var(--body); font-size: 0.98rem; color: var(--ink);
+    padding: 13px 15px; border:1px solid var(--line-light); border-radius: var(--radius-sm);
+    background: var(--ivory); transition: border-color .2s, box-shadow .2s; outline:none;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,106,.16); background:#fff; }
+  .field textarea { resize: vertical; min-height: 110px; }
+  .field select { appearance:none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position: right 15px center; padding-right: 40px; }
+  .field-row { display:grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .chips-select { display:flex; flex-wrap:wrap; gap:9px; }
+  .chips-select button { padding: 9px 16px; border:1px solid var(--line-light); background: var(--ivory); border-radius:100px; font-family:var(--body); font-size:0.86rem; color: var(--ink-soft); cursor:pointer; transition:.2s; }
+  .chips-select button.on { background: var(--navy); color: var(--ivory); border-color: var(--navy); }
+  .form-card .submit { width:100%; justify-content:center; margin-top: 8px; }
+  .form-success { display:none; text-align:center; padding: 30px 10px; }
+  .form-success.show { display:block; }
+  .form-success .ck { width:64px;height:64px;border-radius:50%;background:rgba(201,168,106,.15);color:var(--gold-deep);display:grid;place-items:center;margin:0 auto 20px;}
+  .form-success h3 { font-family:var(--serif); font-size:1.8rem; }
+  .form-success p { color: var(--gray); max-width: 36ch; margin: 10px auto 0; }
+  @media (max-width:920px){ .sp-grid{ grid-template-columns:1fr; gap:40px;} .sp-left{ position:static;} }
+  @media (max-width:520px){ .field-row{ grid-template-columns:1fr;} }
+</style>
+</head>
+<body data-page="start" data-light-header>
+<header id="site-header"></header>
+
+<main class="sp">
+<section data-screen-label="Start a Project">
+  <div class="wrap-wide sp-grid">
+    <!-- LEFT -->
+    <div class="sp-left reveal">
+      <div class="avail" style="display:inline-flex;align-items:center;gap:9px;padding:8px 16px;border:1px solid var(--line-dark);border-radius:100px;margin-bottom:24px;font-size:0.78rem;color:rgba(250,250,248,.8)">
+        <span style="width:8px;height:8px;border-radius:50%;background:#5bbd7e;box-shadow:0 0 0 3px rgba(91,189,126,.18)"></span>
+        Currently accepting new projects
+      </div>
+      <span class="eyebrow on-dark" style="display:block;margin-bottom:20px">Start a Project</span>
+      <h1>Tell us about your <em>project.</em></h1>
+      <p class="lead">You have a mission. We have the technology to help you achieve it. Share a few details and we'll get back to you within two business days.</p>
+      <p style="color:rgba(250,250,248,.6);font-size:0.95rem;margin-top:16px;max-width:42ch">We partner with founders, nonprofits, community organizations, and businesses — whether you have a fully-scoped plan or just the seed of an idea.</p>
+      <div class="next">
+        <div class="step"><div class="n">1</div><div><h4>We listen</h4><p>A focused conversation about your mission, users, and goals — no pressure, no jargon.</p></div></div>
+        <div class="step"><div class="n">2</div><div><h4>We map a path</h4><p>A clear, honest plan for what to build, how long it takes, and what it costs.</p></div></div>
+        <div class="step"><div class="n">3</div><div><h4>We build together</h4><p>From first prototype to long-term partnership — software your community relies on.</p></div></div>
+      </div>
+      <div class="sp-contact">
+        <div><span class="lbl">Email</span><a href="mailto:hello@oirtech.com">hello@oirtech.com</a></div>
+        <div><span class="lbl">Phone</span><a href="tel:+12125550198">(212) 555-0198</a></div>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="reveal d1">
+      <div class="form-card">
+        <form id="projectForm" novalidate>
+          <div class="fc-title">Let's build something extraordinary.</div>
+          <div class="fc-sub">Fields marked <span style="color:var(--gold-deep)">*</span> are required.</div>
+
+          <div class="field-row">
+            <div class="field"><label>Your Name <span class="req">*</span></label><input type="text" name="name" required placeholder="Full name"></div>
+            <div class="field"><label>Email <span class="req">*</span></label><input type="email" name="email" required placeholder="you@organization.com"></div>
+          </div>
+
+          <div class="field"><label>Organization</label><input type="text" name="org" placeholder="Company, nonprofit, or community"></div>
+
+          <div class="field-row">
+            <div class="field"><label>Project Type</label>
+              <select name="type">
+                <option value="">Select…</option>
+                <option>New product from scratch</option>
+                <option>Improve an existing product</option>
+                <option>Platform &amp; infrastructure</option>
+                <option>AI system</option>
+                <option>Community platform</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+            <div class="field"><label>Current Stage</label>
+              <select name="stage">
+                <option value="">Select…</option>
+                <option>Just an idea</option>
+                <option>Have a plan or spec</option>
+                <option>In development</option>
+                <option>Live &amp; scaling</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field"><label>What are you hoping to achieve?</label>
+            <input type="text" name="goals" placeholder="e.g. Help families coordinate chesed across our community">
+          </div>
+
+          <div class="field-row">
+            <div class="field"><label>Timeline</label>
+              <select name="timeline">
+                <option value="">Select…</option>
+                <option>As soon as possible</option>
+                <option>1–3 months</option>
+                <option>3–6 months</option>
+                <option>6+ months</option>
+                <option>Flexible</option>
+              </select>
+            </div>
+            <div class="field"><label>Budget Range</label>
+              <select name="budget">
+                <option value="">Select…</option>
+                <option>Under $25k</option>
+                <option>$25k – $50k</option>
+                <option>$50k – $100k</option>
+                <option>$100k+</option>
+                <option>Let's discuss</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field"><label>Anything else?</label>
+            <textarea name="message" placeholder="Tell us more about your mission and what you have in mind…"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-gold btn-lg submit">Send Project Brief <svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <div class="ck"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 13l4 4L19 7"/></svg></div>
+          <h3>Thank you.</h3>
+          <p>We've received your project brief and will be in touch within two business days. We're looking forward to it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer id="site-footer"></footer>
+<script src="assets/oir-mockups.js"></script>
+<script src="assets/oir-tweaks.js"></script>
+<script src="assets/oir.js"></script>
+<script>
+(function(){
+  const form = document.getElementById('projectForm');
+  if(!form) return;
+  // Accessibility: programmatically associate each label with its field
+  form.querySelectorAll('.field').forEach(function(f, i){
+    const l = f.querySelector('label'), inp = f.querySelector('input, select, textarea');
+    if (l && inp) { const id = inp.id || ('oir-field-' + i); inp.id = id; l.setAttribute('for', id); }
+  });
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    let ok = true;
+    form.querySelectorAll('[required]').forEach(f=>{
+      const bad = !f.value.trim() || (f.type==='email' && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.value));
+      f.style.borderColor = bad ? '#c0392b' : '';
+      if(bad) ok=false;
+    });
+    if(!ok) return;
+    form.style.display='none';
+    document.getElementById('formSuccess').classList.add('show');
+  });
+})();
+</script>
+</body>
+</html>

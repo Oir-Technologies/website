@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Studies — How Oir Builds Software Communities Rely On | Oir Technologies</title>
+<meta name="description" content="Three engagements, from challenge to lasting impact: Shidduch App, Yad Parnasa, and Gemach Network. How Oir Technologies designs and builds software people rely on.">
+<link rel="canonical" href="https://oirtechnologies.com/case-studies.html">
+<meta name="theme-color" content="#07111F">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="apple-touch-icon" href="assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Oir Technologies">
+<meta property="og:title" content="Case Studies — How Oir Builds Software Communities Rely On">
+<meta property="og:description" content="Three engagements, from challenge to lasting impact: Shidduch App, Yad Parnasa, and Gemach Network.">
+<meta property="og:url" content="https://oirtechnologies.com/case-studies.html">
+<meta property="og:image" content="https://oirtechnologies.com/assets/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Case Studies — Oir Technologies">
+<meta name="twitter:description" content="Three engagements, from challenge to lasting impact: Shidduch App, Yad Parnasa, and Gemach Network.">
+<meta name="twitter:image" content="https://oirtechnologies.com/assets/og-image.svg">
+<link rel="stylesheet" href="assets/oir.css">
+<link rel="stylesheet" href="assets/oir-mockups.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CollectionPage","name":"Oir Technologies Case Studies","url":"https://oirtechnologies.com/case-studies.html","about":[{"@type":"SoftwareApplication","name":"Shidduch App"},{"@type":"SoftwareApplication","name":"Yad Parnasa"},{"@type":"SoftwareApplication","name":"Gemach Network"}],"publisher":{"@type":"Organization","name":"Oir Technologies","url":"https://oirtechnologies.com"}}
+</script>
+<script defer src="assets/analytics.js"></script>
+<style>
+  .cshero { background: var(--navy); color: var(--ivory); padding-block: 70px 76px; position:relative; overflow:hidden; }
+  .cshero::before{ content:""; position:absolute; inset:0; background: radial-gradient(50% 60% at 85% 0%, rgba(201,168,106,.10), transparent 55%);}
+  .cshero h1 { font-size: clamp(3rem,6vw,5rem); position:relative; }
+  .cshero .lead { max-width: 600px; margin-top: 22px; color: rgba(250,250,248,.74); }
+
+  /* ---- Case section ---- */
+  .case { padding-block: clamp(64px,7vw,108px); border-top: 1px solid var(--line-light); }
+  .case.dark { background: var(--navy); color: var(--ivory); border-color: var(--line-dark); }
+
+  .case-head { display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: end; }
+  .ch-meta { display: flex; align-items: center; gap: 16px; }
+  .ch-meta .idx { font-family: var(--serif); font-size: 1.3rem; color: var(--gold-deep); }
+  .case.dark .ch-meta .idx { color: var(--gold); }
+  .ch-meta .cat { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray); font-weight: 600; }
+  .case.dark .ch-meta .cat { color: var(--gray-light); }
+  .case-head h2 { font-size: clamp(2.3rem,4.4vw,3.6rem); margin-top: 14px; }
+  .case-head .tagline { color: var(--ink-soft); font-size: 1.12rem; max-width: 40ch; line-height: 1.5; }
+  .case.dark .case-head .tagline { color: rgba(250,250,248,.74); }
+
+  .engagement { display: flex; gap: clamp(24px,4vw,56px); flex-wrap: wrap; margin-top: 34px; padding-top: 26px; border-top: 1px solid var(--line-light); }
+  .case.dark .engagement { border-color: var(--line-dark); }
+  .engagement .el { display: block; font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-deep); font-weight: 600; margin-bottom: 6px; }
+  .case.dark .engagement .el { color: var(--gold); }
+  .engagement .ev { font-size: 0.98rem; color: var(--ink); font-weight: 500; }
+  .case.dark .engagement .ev { color: var(--ivory); }
+
+  .case-visual { margin-top: 46px; }
+  .case-visual .scene { aspect-ratio: 16/7; border-radius: var(--radius-lg); overflow: hidden; display: grid; place-items: center;
+    background: linear-gradient(160deg, #0e1d33, #07111f); border: 1px solid var(--line-dark); position: relative; }
+  .case-visual .scene.ivory { background: linear-gradient(160deg, #eef0f3, #e2e5ea); border-color: rgba(12,22,38,.06); }
+  .case-visual .scene.green { background: linear-gradient(160deg, #1d3a2b, #0f2419); }
+  .case-visual .scene [data-mock] { width: clamp(180px, 22vw, 210px); }
+  @media (max-width: 680px){ .case-visual .scene { aspect-ratio: 4/5; } }
+
+  .case-narrative { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(30px,4vw,64px) clamp(36px,5vw,80px); margin-top: 52px; }
+  .cs-block .lbl { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-deep); font-weight: 600; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid var(--line-light); }
+  .case.dark .cs-block .lbl { color: var(--gold); border-color: var(--line-dark); }
+  .cs-block p { margin: 0; color: var(--ink-soft); font-size: 1.04rem; line-height: 1.66; }
+  .case.dark .cs-block p { color: rgba(250,250,248,.74); }
+  @media (max-width: 760px){ .case-narrative { grid-template-columns: 1fr; gap: 30px; } }
+
+  .case-impact { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; margin-top: 52px; padding-top: 44px; border-top: 1px solid var(--line-light); }
+  .case.dark .case-impact { border-color: var(--line-dark); }
+  .case-impact .lbl { color: var(--gray); font-size: 0.9rem; margin-top: 8px; }
+  .case.dark .case-impact .lbl { color: var(--gray-light); }
+  @media (max-width: 720px){ .case-impact { grid-template-columns: repeat(2,1fr); gap: 28px; } }
+
+  .lessons { margin-top: 50px; border-radius: var(--radius-lg); padding: clamp(28px,3.5vw,44px);
+    background: linear-gradient(150deg, rgba(201,168,106,.10), rgba(201,168,106,.03)); border: 1px solid rgba(201,168,106,.28); }
+  .case.dark .lessons { background: rgba(201,168,106,.06); }
+  .lessons .ll { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-deep); font-weight: 600; }
+  .case.dark .lessons .ll { color: var(--gold); }
+  .lessons h3 { font-family: var(--serif); font-size: clamp(1.4rem,2.2vw,1.9rem); margin: 8px 0 22px; }
+  .case.dark .lessons h3 { color: var(--ivory); }
+  .lessons ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
+  .lessons li { display: grid; grid-template-columns: 26px 1fr; gap: 14px; color: var(--ink-soft); font-size: 1.02rem; line-height: 1.6; }
+  .case.dark .lessons li { color: rgba(250,250,248,.78); }
+  .lessons li b { color: var(--ink); font-weight: 600; }
+  .case.dark .lessons li b { color: var(--ivory); }
+  .lessons li .lm { color: var(--gold-deep); font-family: var(--serif); font-size: 1.1rem; line-height: 1.4; }
+  .case.dark .lessons li .lm { color: var(--gold); }
+
+  .cs-cta { background: var(--navy-2); color: var(--ivory); text-align:center; }
+  .cs-cta h2 { font-size: clamp(2rem,3.4vw,3rem); } .cs-cta h2 em{ color:var(--gold); font-style:italic; }
+  .cs-cta .cta-row { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-top: 30px; }
+</style>
+</head>
+<body data-page="work" data-light-header>
+<header id="site-header"></header>
+
+<!-- HERO -->
+<section class="cshero" data-screen-label="Case Studies — Hero">
+  <div class="wrap">
+    <span class="eyebrow on-dark reveal">Selected Work</span>
+    <h1 class="reveal d1" style="margin-top:18px">Real problems.<br>Real software. Real impact.</h1>
+    <p class="lead reveal d2">Every product we build starts with a community need and ends with technology people rely on. Here is how three of them came to life — from the first conversation to lasting impact.</p>
+  </div>
+</section>
+
+<!-- ============ CASE 01 — SHIDDUCH ============ -->
+<section class="case" data-screen-label="Case — Shidduch App">
+  <div class="wrap">
+    <div class="case-head reveal">
+      <div>
+        <div class="ch-meta"><span class="idx">01</span><span class="cat">Community · Matchmaking</span></div>
+        <h2>Shidduch App</h2>
+      </div>
+      <p class="tagline">Turning an informal, deeply personal process into trusted infrastructure — without losing the human touch.</p>
+    </div>
+    <div class="engagement reveal">
+      <div><span class="el">Engagement</span><span class="ev">Strategy · Design · Engineering</span></div>
+      <div><span class="el">Timeline</span><span class="ev">14 weeks to launch</span></div>
+      <div><span class="el">Foundation</span><span class="ev">Oir Apps Platform</span></div>
+    </div>
+    <div class="case-visual reveal"><div class="scene"><div data-mock="shidduch"></div></div></div>
+    <div class="case-narrative">
+      <div class="cs-block reveal"><div class="lbl">Challenge</div><p>Matchmaking ran on spreadsheets, phone calls, and memory. Deeply personal information — health, family, hashkafa — moved informally over text and paper, with no security and no structure. Promising matches were lost to disorganization, and shadchanim were drowning in manual work.</p></div>
+      <div class="cs-block reveal d1"><div class="lbl">Approach</div><p>We began with weeks of discovery alongside working shadchanim, mapping how a shidduch actually happens. Rather than impose a dating-app paradigm, we designed around the shadchan as the trusted intermediary — building structure that amplified their judgment instead of replacing it.</p></div>
+      <div class="cs-block reveal"><div class="lbl">System Design</div><p>Built on the Oir Apps Platform: encrypted identity, field-level permissions, and a complete audit trail. Every profile field carries its own visibility rules, so a shadchan sees what they need and nothing more. Compatibility signals run server-side over encrypted data — surfacing suggestions without ever exposing raw information.</p></div>
+      <div class="cs-block reveal d1"><div class="lbl">Product Experience</div><p>The interface presents one considered match at a time — never an endless feed. Every introduction is consent-first: both sides opt in before a single detail is shared. We refined it with shadchanim across generations until it felt effortless for a first-time user and a thousand-match veteran alike.</p></div>
+    </div>
+    <div class="case-impact reveal">
+      <div class="stat"><div class="num">98%</div><div class="lbl">Match alignment score</div></div>
+      <div class="stat"><div class="num">2,800+</div><div class="lbl">Introductions facilitated</div></div>
+      <div class="stat"><div class="num">100%</div><div class="lbl">Encrypted &amp; private</div></div>
+      <div class="stat"><div class="num">4.9★</div><div class="lbl">Shadchan satisfaction</div></div>
+    </div>
+    <div class="lessons reveal">
+      <div class="ll">Lessons Learned</div>
+      <h3>What this engagement taught us.</h3>
+      <ul>
+        <li><span class="lm">01</span><span><b>Augment, don't replace.</b> The breakthrough was designing intelligence to strengthen the shadchan's intuition — never to automate it away.</span></li>
+        <li><span class="lm">02</span><span><b>Privacy is a feature people feel.</b> Field-level permissions weren't just compliance — they were the reason families trusted the platform at all.</span></li>
+        <li><span class="lm">03</span><span><b>Design for the least technical user.</b> Making it effortless for every generation drove adoption more than any single feature.</span></li>
+      </ul>
+    </div>
+    <div class="reveal" style="margin-top:36px"><a class="link-gold" href="product-shidduch.html" data-analytics="cta_view_product">View the product <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+</section>
+
+<!-- ============ CASE 02 — YAD PARNASA ============ -->
+<section class="case dark" data-screen-label="Case — Yad Parnasa">
+  <div class="wrap">
+    <div class="case-head reveal">
+      <div>
+        <div class="ch-meta"><span class="idx">02</span><span class="cat">Opportunities · Employment</span></div>
+        <h2>Yad Parnasa</h2>
+      </div>
+      <p class="tagline">Replacing a word-of-mouth job market with a trusted, two-sided platform that restores dignity to the search.</p>
+    </div>
+    <div class="engagement reveal">
+      <div><span class="el">Engagement</span><span class="ev">Strategy · Design · Engineering</span></div>
+      <div><span class="el">Timeline</span><span class="ev">12 weeks to launch</span></div>
+      <div><span class="el">Foundation</span><span class="ev">Oir Apps Platform</span></div>
+    </div>
+    <div class="case-visual reveal"><div class="scene ivory"><div data-mock="parnasa"></div></div></div>
+    <div class="case-narrative">
+      <div class="cs-block reveal"><div class="lbl">Challenge</div><p>Opportunities spread by word of mouth, reaching only a lucky few. Employers couldn't find qualified candidates within the community, and capable people couldn't find dignified work. The handful of existing boards were noisy, untrusted, and impersonal.</p></div>
+      <div class="cs-block reveal d1"><div class="lbl">Approach</div><p>We mapped both journeys — seeker and employer — before designing a single screen. The insight: this could not feel like a cold job portal. We designed a curated, high-signal marketplace where every role is reviewed and every application is treated with respect.</p></div>
+      <div class="cs-block reveal"><div class="lbl">System Design</div><p>Multi-tenant organizations let each employer manage roles, candidates, and hiring teams in their own secure space, with role-based permissions throughout. The platform's notification engine reaches candidates by email, SMS, or push, and intelligent matching surfaces genuinely relevant fits on both sides — all on shared, encrypted infrastructure.</p></div>
+      <div class="cs-block reveal d1"><div class="lbl">Product Experience</div><p>Seekers receive a calm morning briefing of roles chosen for them — not a firehose. Employers get an organized, auditable hiring workspace. The application flow is built around real community schedules and norms, so applying feels dignified rather than transactional.</p></div>
+    </div>
+    <div class="case-impact reveal">
+      <div class="stat"><div class="num">11.2K+</div><div class="lbl">People helped</div></div>
+      <div class="stat"><div class="num">3,400</div><div class="lbl">Roles posted</div></div>
+      <div class="stat"><div class="num">68%</div><div class="lbl">Placement rate</div></div>
+      <div class="stat"><div class="num">100%</div><div class="lbl">Private &amp; encrypted</div></div>
+    </div>
+    <div class="lessons reveal">
+      <div class="ll">Lessons Learned</div>
+      <h3>What this engagement taught us.</h3>
+      <ul>
+        <li><span class="lm">01</span><span><b>Curation beats volume.</b> A smaller, reviewed board outperformed an open one on every metric that mattered.</span></li>
+        <li><span class="lm">02</span><span><b>Two-sided trust compounds.</b> When employers trusted candidate quality, they posted better roles — which attracted better candidates.</span></li>
+        <li><span class="lm">03</span><span><b>Respect is a conversion strategy.</b> A dignified application flow measurably increased completion rates.</span></li>
+      </ul>
+    </div>
+    <div class="reveal" style="margin-top:36px"><a class="link-gold" href="product-yad-parnasa.html" data-analytics="cta_view_product">View the product <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+</section>
+
+<!-- ============ CASE 03 — GEMACH NETWORK ============ -->
+<section class="case" data-screen-label="Case — Gemach Network">
+  <div class="wrap">
+    <div class="case-head reveal">
+      <div>
+        <div class="ch-meta"><span class="idx">03</span><span class="cat">Resource Sharing · Network</span></div>
+        <h2>Gemach Network</h2>
+      </div>
+      <p class="tagline">Connecting dozens of independent gemachs into one living map of generosity — without taking away anyone's autonomy.</p>
+    </div>
+    <div class="engagement reveal">
+      <div><span class="el">Engagement</span><span class="ev">Strategy · Design · Engineering</span></div>
+      <div><span class="el">Timeline</span><span class="ev">Weeks, not months</span></div>
+      <div><span class="el">Foundation</span><span class="ev">Oir Apps Platform</span></div>
+    </div>
+    <div class="case-visual reveal"><div class="scene green"><div data-mock="gemach"></div></div></div>
+    <div class="case-narrative">
+      <div class="cs-block reveal"><div class="lbl">Challenge</div><p>Dozens of gemachs operated in complete isolation. A family needing a wheelchair, folding tables, or baby gear had no way to know what existed where. Resources sat unused in one neighborhood while neighbors went without two streets over.</p></div>
+      <div class="cs-block reveal d1"><div class="lbl">Approach</div><p>The hard constraint: every gemach is fiercely independent and run by volunteers. We couldn't build a system that centralized control. Instead we designed a network — each gemach fully autonomous, yet discoverable together on one shared, map-first interface.</p></div>
+      <div class="cs-block reveal"><div class="lbl">System Design</div><p>Multi-tenant by design: each gemach is its own organization with its own inventory, rules, and operators, on shared infrastructure with built-in location services. A live map aggregates availability across the network in real time, while reservation and return workflows keep items flowing — without any gemach surrendering autonomy.</p></div>
+      <div class="cs-block reveal d1"><div class="lbl">Product Experience</div><p>A warm, map-first experience that makes giving feel as natural as knocking on a neighbor's door. Find what you need nearby, reserve it in a couple of taps, and coordinate a discreet hand-off. For operators, managing inventory and returns is effortless.</p></div>
+    </div>
+    <div class="case-impact reveal">
+      <div class="stat"><div class="num">240+</div><div class="lbl">Items shared</div></div>
+      <div class="stat"><div class="num">18</div><div class="lbl">Gemachs networked</div></div>
+      <div class="stat"><div class="num">5K+</div><div class="lbl">Successful loans</div></div>
+      <div class="stat"><div class="num">100%</div><div class="lbl">Privacy-respecting</div></div>
+    </div>
+    <div class="lessons reveal">
+      <div class="ll">Lessons Learned</div>
+      <h3>What this engagement taught us.</h3>
+      <ul>
+        <li><span class="lm">01</span><span><b>Federate, don't centralize.</b> Respecting each gemach's autonomy was the only way the network could exist at all.</span></li>
+        <li><span class="lm">02</span><span><b>The map is the product.</b> Geography turned a database into something neighbors actually wanted to use.</span></li>
+        <li><span class="lm">03</span><span><b>Launch fast on a platform.</b> Shared infrastructure let the network go live in weeks, not months.</span></li>
+      </ul>
+    </div>
+    <div class="reveal" style="margin-top:36px"><a class="link-gold" href="product-gemach-network.html" data-analytics="cta_view_product">View the product <svg class="arr" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section cs-cta">
+  <div class="wrap">
+    <h2 class="serif reveal">Your project could be <em>next.</em></h2>
+    <p class="lead reveal d1" style="max-width:520px;margin:18px auto 0;color:rgba(250,250,248,.72)">If you have a mission and a community to serve, we'd love to hear about it.</p>
+    <div class="cta-row reveal d1">
+      <a class="btn btn-gold btn-lg" href="start-a-project.html" data-analytics="cta_start_project">Start a Project <svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-ghost btn-lg" href="start-a-project.html" data-analytics="cta_discovery_call">Book a Discovery Call</a>
+    </div>
+  </div>
+</section>
+
+<footer id="site-footer"></footer>
+<script src="assets/oir-mockups.js"></script>
+<script src="assets/oir-tweaks.js"></script>
+<script src="assets/oir.js"></script>
+</body>
+</html>
