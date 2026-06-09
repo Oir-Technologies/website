@@ -12,7 +12,7 @@
   const current = document.body.getAttribute('data-page') || '';
 
   const arr = '<svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
-  const mark = `<svg class="mark" viewBox="0 0 40 40" fill="none"><g stroke="#C9A86A" stroke-width="1.4"><path d="M20 2 L22 18 L38 20 L22 22 L20 38 L18 22 L2 20 L18 18 Z" fill="#C9A86A" stroke="none"/></g></svg>`;
+  const mark = `<svg class="mark" viewBox="0 0 40 40" fill="none" role="img" aria-label="Oir Technologies"><path d="M20 4 C 22.4 11, 27 14.4, 27 21.8 C 27 28.6 23.2 33.8 20 33.8 C 16.8 33.8 13 28.6 13 21.8 C 13 15 16.2 11.4 20 4 Z" fill="#C9A86A"/><path d="M20 17.5 C 21.1 20.4, 22.8 21.8, 22.8 25.2 C 22.8 28.4 21.5 30.8 20 30.8 C 18.5 30.8 17.2 28.4 17.2 25.2 C 17.2 22 18.9 19.2 20 17.5 Z" fill="#FBF4E2"/></svg>`;
 
   /* ---------- Header ---------- */
   const isActive = (id) => current === id || (id === 'products' && current.indexOf('product-') === 0);

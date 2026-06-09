@@ -167,7 +167,7 @@ em.gold, .gold-text { color: var(--gold-deep); font-style: italic; }
   height: 84px; color: var(--ivory);
 }
 .brand { display: flex; align-items: center; gap: 14px; }
-.brand .mark { width: 30px; height: 30px; flex: none; }
+.brand .mark { width: 30px; height: 30px; flex: none; filter: drop-shadow(0 0 5px rgba(201,168,106,.45)); }
 .brand .brand-name { display: block; font-family: var(--serif); font-size: 1.7rem; letter-spacing: 0.2em; line-height: 1; }
 .brand .brand-sub { display: block; font-size: 0.5rem; letter-spacing: 0.42em; text-transform: uppercase; color: var(--gold-soft); margin-top: 4px; }
 .nav-links { display: flex; align-items: center; gap: 38px; }
