@@ -356,3 +356,14 @@ em.gold, .gold-text { color: var(--gold-deep); font-style: italic; }
   .footer-bottom { flex-direction: column; align-items: flex-start; }
   .nav { height: 70px; }
 }
+
+/* ---------- Transparency / illustrative labels ---------- */
+.illus-note { display: inline-flex; align-items: center; gap: 8px; font-size: 0.78rem; color: var(--gray);
+  letter-spacing: 0.01em; line-height: 1.5; margin-top: 14px; }
+.illus-note::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--gold-deep); flex: none; }
+.on-dark .illus-note, .screens .illus-note { color: var(--gray-light); }
+.on-dark .illus-note::before, .screens .illus-note::before { background: var(--gold); }
+
+.footer-transparency { padding-block: 24px 0; color: var(--gray-light); font-size: 0.8rem; line-height: 1.65; max-width: 780px; }
+.footer-transparency a { color: var(--gold-soft); text-decoration: underline; text-underline-offset: 2px; }
+.footer-transparency a:hover { color: var(--gold); }

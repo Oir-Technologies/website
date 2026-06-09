@@ -94,9 +94,10 @@
             <a href="start-a-project.html" data-analytics="cta_footer_start">Start a Project</a><a href="mailto:hello@oirtechnologies.com">hello@oirtechnologies.com</a>
             <a href="tel:+12125550198">(212) 555-0198</a></div>
         </div>
+        <div class="footer-transparency">Some screenshots, workflows, and example data shown across this site are illustrative — intended to demonstrate product concepts, design, and functionality while products continue active development and testing. <a href="transparency.html">Read our transparency note</a>.</div>
         <div class="footer-bottom">
           <span>© 2026 Oir Technologies. All rights reserved.</span>
-          <span style="display:flex;gap:24px"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Security</a></span>
+          <span style="display:flex;gap:24px"><a href="transparency.html">Transparency</a><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Security</a></span>
         </div>
       </div>`;
   }
