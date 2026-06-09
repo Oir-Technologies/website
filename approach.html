@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Approach — How We Build | Oir Technologies</title>
+<meta name="description" content="We start with people, not code. How Oir Technologies understands community challenges, designs for trust, and uses modern engineering to help more people participate in something meaningful.">
+<link rel="canonical" href="https://oirtechnologies.com/approach.html">
+<meta name="theme-color" content="#07111F">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="apple-touch-icon" href="assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Oir Technologies">
+<meta property="og:title" content="Our Approach — How We Build | Oir Technologies">
+<meta property="og:description" content="We start with people, not code. How we understand community challenges, design for trust, and use modern engineering to create real-world impact.">
+<meta property="og:url" content="https://oirtechnologies.com/approach.html">
+<meta property="og:image" content="https://oirtechnologies.com/assets/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Our Approach — How We Build | Oir Technologies">
+<meta name="twitter:description" content="We start with people, not code. How we turn community challenges into purpose-built products.">
+<meta name="twitter:image" content="https://oirtechnologies.com/assets/og-image.svg">
+<link rel="stylesheet" href="assets/oir.css">
+<link rel="stylesheet" href="assets/oir-mockups.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AboutPage","name":"Our Approach — How We Build | Oir Technologies","url":"https://oirtechnologies.com/approach.html","isPartOf":{"@type":"WebSite","name":"Oir Technologies","url":"https://oirtechnologies.com"},"publisher":{"@type":"Organization","name":"Oir Technologies"}}
+</script>
+<script defer src="assets/analytics.js"></script>
+<style>
+  /* ---- Hero ---- */
+  .ahero { background: var(--navy); color: var(--ivory); position: relative; overflow: hidden; padding-block: 76px 84px; }
+  .ahero::before { content:""; position:absolute; inset:0; pointer-events:none;
+    background: radial-gradient(54% 60% at 80% 0%, rgba(201,168,106,.12), transparent 56%); }
+  .ahero .wrap { position: relative; }
+  .ahero h1 { font-size: clamp(2.8rem, 6vw, 5.2rem); line-height: 1.02; letter-spacing: -.02em; max-width: 16ch; }
+  .ahero h1 em { color: var(--gold); font-style: italic; }
+  .ahero .lead { max-width: 600px; margin-top: 26px; color: rgba(250,250,248,.76); }
+
+  /* ---- How we build: steps ---- */
+  .build { background: var(--ivory); }
+  .build-steps { margin-top: 48px; border-top: 1px solid var(--line-light); }
+  .bstep { display: grid; grid-template-columns: 120px 1fr; gap: clamp(20px,4vw,56px); align-items: start;
+    padding: clamp(26px,3vw,38px) 0; border-bottom: 1px solid var(--line-light); }
+  .bstep .bn { font-family: var(--serif); font-size: clamp(2.2rem,3.4vw,3rem); color: var(--gold-deep); line-height: 1; }
+  .bstep h3 { font-size: clamp(1.4rem,2.2vw,1.9rem); }
+  .bstep p { color: var(--ink-soft); font-size: 1.08rem; line-height: 1.62; margin-top: 12px; max-width: 60ch; }
+  @media (max-width: 680px){ .bstep { grid-template-columns: 1fr; gap: 8px; } }
+
+  /* ---- Principles ---- */
+  .principles2 { background: var(--ivory-2); }
+  .prin-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--line-light);
+    border: 1px solid var(--line-light); border-radius: var(--radius); overflow: hidden; margin-top: 50px; }
+  .prin { background: #fff; padding: 30px 26px; display: flex; flex-direction: column; gap: 10px; }
+  .prin .pn { color: var(--gold-deep); }
+  .prin h3 { font-family: var(--body); font-weight: 600; font-size: 1.05rem; }
+  .prin p { color: var(--gray); font-size: .9rem; line-height: 1.55; margin: 0; }
+  @media (max-width: 920px){ .prin-grid { grid-template-columns: repeat(2,1fr); } }
+  @media (max-width: 520px){ .prin-grid { grid-template-columns: 1fr; } }
+
+  /* ---- Flow: challenge to product ---- */
+  .flow { background: var(--navy); color: var(--ivory); position: relative; overflow: hidden; }
+  .flow::before { content:""; position:absolute; inset:0; pointer-events:none;
+    background: radial-gradient(50% 60% at 50% 0%, rgba(201,168,106,.10), transparent 58%); }
+  .flow .section-head .eyebrow { color: var(--gold); }
+  .flow .section-head h2 { color: var(--ivory); }
+  .flow-rail { position: relative; max-width: 760px; margin: 54px auto 0; }
+  .fstage { position: relative; display: grid; grid-template-columns: 56px 1fr; gap: 22px; align-items: start; padding-bottom: 34px; }
+  .fstage:last-child { padding-bottom: 0; }
+  .fstage .fdot { width: 56px; display: grid; place-items: center; position: relative; z-index: 2; }
+  .fstage .fdot span { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center;
+    background: rgba(255,255,255,.04); border: 1px solid rgba(201,168,106,.4); color: var(--gold);
+    font-family: var(--serif); font-size: 1.05rem; }
+  .fstage.last .fdot span { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+  .fstage::before { content:""; position: absolute; left: 27px; top: 44px; bottom: -2px; width: 1px;
+    background: linear-gradient(var(--gold), rgba(201,168,106,.2)); }
+  .fstage:last-child::before { display: none; }
+  .fstage h3 { font-size: 1.3rem; color: var(--ivory); margin-top: 8px; }
+  .fstage p { color: rgba(250,250,248,.66); font-size: .98rem; line-height: 1.55; margin-top: 6px; max-width: 52ch; }
+
+  /* ---- Engineering ---- */
+  .eng { background: var(--ivory); }
+  .eng-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(36px,5vw,72px); align-items: start; margin-top: 14px; }
+  .eng-copy .lead { margin-top: 18px; color: var(--ink-soft); }
+  .eng-list { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line-light);
+    border: 1px solid var(--line-light); border-radius: var(--radius); overflow: hidden; }
+  .eng-list .el { background: #fff; padding: 22px; display: flex; flex-direction: column; gap: 6px; }
+  .eng-list .el .t { font-weight: 600; font-size: .98rem; color: var(--ink); }
+  .eng-list .el .d { font-size: .85rem; color: var(--gray); line-height: 1.5; }
+  @media (max-width: 860px){ .eng-grid { grid-template-columns: 1fr; gap: 30px; } }
+  @media (max-width: 420px){ .eng-list { grid-template-columns: 1fr; } }
+
+  .approach-cta { background: var(--navy-2); color: var(--ivory); text-align: center; }
+  .approach-cta h2 { font-size: clamp(2rem,3.4vw,3rem); } .approach-cta h2 em { color: var(--gold); font-style: italic; }
+  .approach-cta .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 30px; }
+</style>
+</head>
+<body data-page="approach" data-light-header>
+<header id="site-header"></header>
+
+<!-- HERO — Section 1: technology is not the goal -->
+<section class="ahero" data-screen-label="Approach — Hero">
+  <div class="wrap">
+    <span class="eyebrow on-dark reveal">Our Approach</span>
+    <h1 class="reveal d1" style="margin-top:18px">Technology is not the goal. <em>People are.</em></h1>
+    <p class="lead reveal d2">Communities are the goal. Families are the goal. Technology is simply the most powerful tool we have to help more people take part in something meaningful — an introduction, an act of chesed, a livelihood, a kinder word.</p>
+  </div>
+</section>
+
+<!-- Section 2: How We Build -->
+<section class="section-sm build">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">How We Build</span>
+      <h2 class="h-lg">We start with the problem — never the code.</h2>
+    </div>
+    <div class="build-steps">
+      <div class="bstep reveal">
+        <div class="bn">01</div>
+        <div><h3>Understand the problem</h3><p>We spend real time understanding how people meet a challenge today — the phone calls, the spreadsheets, the volunteers, the unwritten rules. Before we design anything, we listen.</p></div>
+      </div>
+      <div class="bstep reveal">
+        <div class="bn">02</div>
+        <div><h3>Find the friction</h3><p>Where are opportunities being missed? Where are people struggling? Where is effort being wasted? The friction is exactly where thoughtful technology can help the most.</p></div>
+      </div>
+      <div class="bstep reveal">
+        <div class="bn">03</div>
+        <div><h3>Design for people</h3><p>Software should feel intuitive and humane — familiar on the very first try, for every generation and every level of comfort with technology. Simplicity is the hardest, and most important, work.</p></div>
+      </div>
+      <div class="bstep reveal">
+        <div class="bn">04</div>
+        <div><h3>Build for trust</h3><p>Security, privacy, reliability, and transparency are not features we bolt on at the end. They are requirements we begin with — because communities stake their reputation on what we build.</p></div>
+      </div>
+      <div class="bstep reveal">
+        <div class="bn">05</div>
+        <div><h3>Scale the impact</h3><p>The best technology quietly helps more people take part in meaningful outcomes — more introductions made, more giving connected, more livelihoods found, more good set in motion.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 3: Principles -->
+<section class="section-sm principles2" id="principles">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">What Guides Us</span>
+      <h2 class="h-lg">The principles behind every product.</h2>
+    </div>
+    <div class="prin-grid">
+      <div class="prin reveal"><span class="pn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.5 4-7 8-7s8 2.5 8 7"/></svg></span><h3>Human-centered</h3><p>Built around real people and how they actually live.</p></div>
+      <div class="prin reveal"><span class="pn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 21V5l14-2v14M5 13l14-2"/></svg></span><h3>Mission-driven</h3><p>Every product begins with a challenge worth solving.</p></div>
+      <div class="prin reveal"><span class="pn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span><h3>Secure by design</h3><p>Protection is engineered in from the first line.</p></div>
+      <div class="prin reveal"><span class="pn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg></span><h3>Privacy-conscious</h3><p>We collect only what's needed, and guard it closely.</p></div>
+      <div class="prin reveal"><span class="pn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l2.5 6L21 11l-6.5 2L12 19l-2.5-6L3 11l6.5-2z"/></svg></span><h3>Beautifully designed</h3><p>Calm, considered, and genuinely a pleasure to use.</p></div>
+      <div class="prin reveal"><span class="pn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span><h3>Effortless to use</h3><p>Familiar on the first try, for every generation.</p></div>
+      <div class="prin reveal"><span class="pn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="4"/></svg></span><h3>Built to last</h3><p>Reliable infrastructure communities can depend on.</p></div>
+      <div class="prin reveal"><span class="pn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><h3>Meaningful outcomes</h3><p>Measured by real impact, not vanity metrics.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 4: From challenge to product -->
+<section class="section-sm flow">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Our Process</span>
+      <h2 class="h-lg">From a community challenge to real-world impact.</h2>
+    </div>
+    <div class="flow-rail">
+      <div class="fstage reveal"><div class="fdot"><span>01</span></div><div><h3>Community Challenge</h3><p>A real need where people are already trying to help one another.</p></div></div>
+      <div class="fstage reveal"><div class="fdot"><span>02</span></div><div><h3>Deep Research</h3><p>We learn how it works today — the people, the friction, the missed opportunities.</p></div></div>
+      <div class="fstage reveal"><div class="fdot"><span>03</span></div><div><h3>Human-Centered Design</h3><p>We design something intuitive, dignified, and trusted from the first screen.</p></div></div>
+      <div class="fstage reveal"><div class="fdot"><span>04</span></div><div><h3>Secure Engineering</h3><p>We build it on modern, secure, privacy-conscious architecture.</p></div></div>
+      <div class="fstage reveal"><div class="fdot"><span>05</span></div><div><h3>Purpose-Built Product</h3><p>An independent product, shaped entirely around its mission.</p></div></div>
+      <div class="fstage last reveal"><div class="fdot"><span>06</span></div><div><h3>Real-World Impact</h3><p>More people taking part in something meaningful — that's the only metric that counts.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 5: Engineering excellence -->
+<section class="section-sm eng" id="engineering">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Engineering Excellence</span>
+      <h2 class="h-lg">And the engineering is serious.</h2>
+    </div>
+    <div class="eng-grid">
+      <div class="eng-copy reveal">
+        <p class="lead">Mission comes first — but it's carried by genuinely modern engineering. Every Oir product is built to be secure, reliable, and ready to grow, using the same standards you'd expect from the best software anywhere.</p>
+        <p class="lead" style="font-size:1rem">Technology supports the story. It is never the story.</p>
+      </div>
+      <div class="eng-list reveal">
+        <div class="el"><span class="t">Modern cloud architecture</span><span class="d">Resilient, current, and built to scale.</span></div>
+        <div class="el"><span class="t">Secure authentication</span><span class="d">Strong, modern identity and access.</span></div>
+        <div class="el"><span class="t">Role-based permissions</span><span class="d">Exactly who sees what — nothing more.</span></div>
+        <div class="el"><span class="t">Reliability &amp; uptime</span><span class="d">Engineered for systems people depend on.</span></div>
+        <div class="el"><span class="t">Privacy-conscious engineering</span><span class="d">Data minimized, encrypted, and protected.</span></div>
+        <div class="el"><span class="t">Scalable infrastructure</span><span class="d">From first user to a whole community.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section approach-cta">
+  <div class="wrap">
+    <h2 class="serif reveal">Have a challenge worth <em>solving?</em></h2>
+    <p class="lead reveal d1" style="max-width:540px;margin:18px auto 0;color:rgba(250,250,248,.72)">If your community or organization is wrestling with a real problem, we'd love to understand it with you.</p>
+    <div class="cta-row reveal d1">
+      <a class="btn btn-gold btn-lg" href="start-a-project.html" data-analytics="cta_start_project">Start a Project <svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-ghost btn-lg" href="start-a-project.html" data-analytics="cta_talk_with_oir">Talk With Oir</a>
+    </div>
+  </div>
+</section>
+
+<footer id="site-footer"></footer>
+<script src="assets/oir-mockups.js"></script>
+<script src="assets/oir-tweaks.js"></script>
+<script src="assets/oir.js"></script>
+</body>
+</html>

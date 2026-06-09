@@ -6,7 +6,7 @@
     { id: 'work',     label: 'Work',     href: 'case-studies.html' },
     { id: 'products', label: 'Products', href: 'products.html' },
     { id: 'services', label: 'Services', href: 'services.html' },
-    { id: 'platform', label: 'Platform', href: 'platform.html' },
+    { id: 'approach', label: 'Approach', href: 'approach.html' },
     { id: 'about',    label: 'About',    href: 'about.html' },
   ];
   const current = document.body.getAttribute('data-page') || '';
@@ -87,9 +87,9 @@
           <div class="footer-col"><h4>Products</h4>
             <a href="product-shidduch.html">Shidduch App</a><a href="product-yad-parnasa.html">Yad Parnasa</a>
             <a href="product-gemach-network.html">Gemach Network</a><a href="products.html">All Products</a></div>
-          <div class="footer-col"><h4>Platform</h4>
-            <a href="platform.html">Apps Platform</a><a href="platform.html">Privacy & Security</a>
-            <a href="platform.html">Identity</a><a href="platform.html">Infrastructure</a></div>
+          <div class="footer-col"><h4>How We Build</h4>
+            <a href="approach.html">Our Approach</a><a href="approach.html#principles">Our Principles</a>
+            <a href="approach.html#engineering">Engineering & Security</a><a href="case-studies.html">Case Studies</a></div>
           <div class="footer-col"><h4>Contact</h4>
             <a href="start-a-project.html" data-analytics="cta_footer_start">Start a Project</a><a href="mailto:hello@oirtechnologies.com">hello@oirtechnologies.com</a>
             <a href="tel:+12125550198">(212) 555-0198</a></div>

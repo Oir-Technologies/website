@@ -116,6 +116,19 @@
           <div class="ck"><span class="bx"></span><b>Say Modeh Ani</b></div>
         </div>
       </div>`,
+
+    dibur: () => `
+      <div class="sg">
+        ${statusInline('rgba(120,100,70,.78)')}
+        <div class="db-head"><div class="db-dt">Today · Dibur Tov</div></div>
+        <div class="db-emblem"><svg viewBox="0 0 48 48" fill="none"><path d="M13 10h16a7 7 0 017 7v4a7 7 0 01-7 7h-8l-8 6v-6a7 7 0 01-7-7v-4a7 7 0 017-7z" fill="rgba(201,168,106,.18)" stroke="#C9A86A" stroke-width="1.4"/><path d="M16 18h13M16 23h8" stroke="#C9A86A" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+        <div class="db-quote">"Words can build worlds."</div>
+        <div class="db-sub">A gentle moment to speak with care</div>
+        <div class="body">
+          <div class="db-row on"><span class="db-bx">${I.check}</span><b>Spoke with patience</b></div>
+          <div class="db-row"><span class="db-bx"></span><b>Judged favorably</b></div>
+        </div>
+      </div>`,
   };
 
   function phone(id) {
