@@ -99,9 +99,10 @@
       var cta = e.target.closest('.btn, .link-gold');
       if (cta) track('cta_click', { label: (cta.textContent || '').trim().slice(0, 60), href: cta.getAttribute('href') || '' });
     });
-    // Project brief submission
-    var form = document.getElementById('projectForm');
-    if (form) form.addEventListener('submit', function () { track('project_brief_submitted', { page: document.body.getAttribute('data-page') || '' }); });
+    // Note: the Start-a-Project form (start-a-project.html) emits its own precise
+    // analytics — project_form_start / project_form_error / project_brief_submitted /
+    // project_brief_delivered / project_brief_fallback — so it is intentionally not
+    // wired here (avoids double-counting and firing before delivery is confirmed).
     // AI Operations: explicit page-view signal for the service division
     var page = document.body.getAttribute('data-page') || '';
     if (page.indexOf('ai-operations') === 0) track('ai_ops_page_view', { page: page });

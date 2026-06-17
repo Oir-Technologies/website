@@ -23,6 +23,18 @@
 {"@context":"https://schema.org","@type":"ContactPage","name":"Start a Project — Oir Technologies","url":"https://oirtechnologies.com/start-a-project.html","publisher":{"@type":"Organization","name":"Oir Technologies"}}
 </script>
 <script defer src="assets/analytics.js"></script>
+<!-- ▼▼ LEAD CAPTURE SETUP (owner: do this once) ▼▼
+     To deliver project briefs straight to your inbox, uncomment and fill ONE line below.
+     Recommended: Web3Forms (free, no account — just verify your email at https://web3forms.com).
+     The access key is PUBLIC by design, so it's safe to put here. No secret keys.
+     Until you set this, the form opens a pre-filled email instead, so no lead is ever lost.
+     (Tip: the same OIR_FORM_ENDPOINT powers the AI Operations assessment form.) -->
+<script>
+  // window.OIR_FORM_ENDPOINT  = 'https://api.web3forms.com/submit';
+  // window.OIR_FORM_ACCESS_KEY = 'paste-your-public-web3forms-access-key';
+  // — or Formspree: window.OIR_FORM_ENDPOINT = 'https://formspree.io/f/your-form-id';
+</script>
+<!-- ▲▲ END LEAD CAPTURE SETUP ▲▲ -->
 <link rel="stylesheet" href="assets/oir.css">
 <link rel="stylesheet" href="assets/oir-mockups.css">
 <style>
@@ -100,7 +112,11 @@
     <!-- FORM -->
     <div class="reveal d1">
       <div class="form-card">
-        <form id="projectForm" novalidate>
+        <form id="projectForm" name="start-a-project" method="POST" novalidate>
+          <!-- Honeypot spam trap: humans leave it empty; bots fill it. Also recognized by Web3Forms. -->
+          <p style="display:none" aria-hidden="true">
+            <label>Leave this field empty: <input type="text" name="botcheck" tabindex="-1" autocomplete="off"></label>
+          </p>
           <div class="fc-title">Let's build something extraordinary.</div>
           <div class="fc-sub">Fields marked <span style="color:var(--gold-deep)">*</span> are required.</div>
 
@@ -184,24 +200,99 @@
 <script src="assets/oir.js"></script>
 <script>
 (function(){
-  const form = document.getElementById('projectForm');
+  var form = document.getElementById('projectForm');
   if(!form) return;
-  // Accessibility: programmatically associate each label with its field
+  var successEl = document.getElementById('formSuccess');
+  var submitBtn = form.querySelector('.submit');
+
+  // ── Lead-capture configuration (single source of truth) ───────────────────
+  // Set window.OIR_FORM_ENDPOINT (+ optional window.OIR_FORM_ACCESS_KEY) in the page
+  // <head> to deliver submissions automatically. Web3Forms/Formspree identifiers are
+  // PUBLIC by design — never put secret keys in client code. With no endpoint set,
+  // submissions fall back to a pre-filled email so a lead is never lost.
+  var CONTACT = 'hello@oirtechnologies.com';
+  function config(){
+    return {
+      endpoint:  (window.OIR_FORM_ENDPOINT  || '').trim(),
+      accessKey: (window.OIR_FORM_ACCESS_KEY || '').trim()
+    };
+  }
+  function track(name){ if(window.oirAnalytics) window.oirAnalytics.track(name, { page:'start-a-project' }); }
+  function val(n){ var el = form.elements[n]; return el ? (el.value||'').trim() : ''; }
+
+  // Accessibility: associate each label with its field (unchanged behavior).
   form.querySelectorAll('.field').forEach(function(f, i){
-    const l = f.querySelector('label'), inp = f.querySelector('input, select, textarea');
-    if (l && inp) { const id = inp.id || ('oir-field-' + i); inp.id = id; l.setAttribute('for', id); }
+    var l = f.querySelector('label'), inp = f.querySelector('input, select, textarea');
+    if (l && inp) { var id = inp.id || ('oir-field-' + i); inp.id = id; l.setAttribute('for', id); }
   });
+
+  // Analytics: form start (first interaction only).
+  var started = false;
+  form.addEventListener('focusin', function(){ if(!started){ started = true; track('project_form_start'); } });
+
+  // Returns the first invalid required field (and marks all), or null if valid.
+  function firstInvalid(){
+    var bad = null;
+    form.querySelectorAll('[required]').forEach(function(f){
+      var isBad = !f.value.trim() || (f.type==='email' && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.value));
+      f.style.borderColor = isBad ? '#c0392b' : '';
+      if(isBad && !bad) bad = f;
+    });
+    return bad;
+  }
+
+  // Success is shown ONLY here — after confirmed delivery (or honeypot bot).
+  function showDelivered(){
+    form.style.display = 'none';
+    successEl.classList.add('show');
+  }
+  // Fallback "success": email app opened — the user is told to press Send.
+  function showFallbackNotice(){
+    form.style.display = 'none';
+    var h = successEl.querySelector('h3'), p = successEl.querySelector('p');
+    if(h) h.textContent = 'Almost there —';
+    if(p) p.innerHTML = 'Your email app should open with your project brief ready to send — just press <b>Send</b> to deliver it. If it didn’t open, email us directly at <a href="mailto:' + CONTACT + '" style="color:var(--gold-deep)">' + CONTACT + '</a>.';
+    successEl.classList.add('show');
+  }
+
+  function mailtoFallback(){
+    var lines = [
+      ['Name', val('name')], ['Email', val('email')], ['Organization', val('org')],
+      ['Project type', val('type')], ['Current stage', val('stage')],
+      ['Goal', val('goals')], ['Timeline', val('timeline')], ['Budget', val('budget')],
+      ['Message', val('message')]
+    ].map(function(p){ return p[0] + ': ' + p[1]; });
+    var href = 'mailto:' + CONTACT
+      + '?subject=' + encodeURIComponent('New Project Brief — ' + (val('org') || val('name')))
+      + '&body=' + encodeURIComponent(lines.join('\n'));
+    track('project_brief_fallback');
+    window.location.href = href;
+    showFallbackNotice();
+  }
+
   form.addEventListener('submit', function(e){
     e.preventDefault();
-    let ok = true;
-    form.querySelectorAll('[required]').forEach(f=>{
-      const bad = !f.value.trim() || (f.type==='email' && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.value));
-      f.style.borderColor = bad ? '#c0392b' : '';
-      if(bad) ok=false;
-    });
-    if(!ok) return;
-    form.style.display='none';
-    document.getElementById('formSuccess').classList.add('show');
+    // Honeypot filled ⇒ bot: show success, send nothing.
+    var hp = form.elements['botcheck'];
+    if(hp && hp.value){ showDelivered(); return; }
+
+    var bad = firstInvalid();
+    if(bad){ track('project_form_error'); if(bad.focus) bad.focus(); return; }
+
+    track('project_brief_submitted');
+    var cfg = config();
+    if(!cfg.endpoint){ mailtoFallback(); return; }   // no endpoint configured yet
+
+    var orig = submitBtn.innerHTML;
+    submitBtn.disabled = true; submitBtn.textContent = 'Sending…';
+    var fd = new FormData(form);
+    if(cfg.accessKey) fd.append('access_key', cfg.accessKey);
+    fd.append('subject', 'New Project Brief — ' + (val('org') || val('name')));
+    fd.append('from_name', val('name'));
+    fetch(cfg.endpoint, { method:'POST', body: fd, headers: { 'Accept':'application/json' } })
+      .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); })
+      .then(function(){ track('project_brief_delivered'); showDelivered(); })
+      .catch(function(){ submitBtn.disabled = false; submitBtn.innerHTML = orig; mailtoFallback(); });
   });
 })();
 </script>

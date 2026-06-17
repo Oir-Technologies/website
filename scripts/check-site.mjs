@@ -70,32 +70,41 @@ if (existsSync(oirJsPath)) {
 }
 if (errors.length === 0) pass(`Internal links resolve across ${htmlFiles.length} HTML files + nav/footer.`);
 
-/* ---------- 2. Netlify Forms wiring ---------- */
-const formFile = 'ai-operations-assessment.html';
-if (existsSync(join(ROOT, formFile))) {
-  const c = readFileSync(join(ROOT, formFile), 'utf8');
-  const checks = [
-    [/<form[^>]*\bmethod="POST"/i, 'form uses method="POST"'],
-    [/name="botcheck"/i, 'honeypot field present'],
-    [/name="consent"[^>]*required/i, 'consent checkbox is required'],
-    [/OIR_FORM_ENDPOINT/, 'configurable form endpoint wired (host-agnostic)'],
-    [/'mailto:'\s*\+\s*CONTACT/, 'mailto fallback so leads are never lost'],
-    [/ai-operations-thank-you\.html/i, 'thank-you redirect referenced'],
-    [/data-netlify/i, 'no leftover Netlify-only form attributes', true /* expectAbsent */],
-  ];
-  for (const [re, label, expectAbsent] of checks) {
+/* ---------- 2. Host-agnostic lead-form wiring (both forms) ---------- */
+// Shared guarantees: real fetch submission, host-agnostic endpoint, honeypot,
+// mailto fallback (no lead ever lost), and NO Netlify-only attributes.
+const COMMON_FORM_CHECKS = [
+  [/<form[^>]*\bmethod="POST"/i, 'method="POST"'],
+  [/name="botcheck"/i, 'honeypot field present'],
+  [/OIR_FORM_ENDPOINT/, 'configurable endpoint (host-agnostic)'],
+  [/'mailto:'\s*\+\s*CONTACT/, 'mailto fallback so leads are never lost'],
+  [/fetch\(\s*(cfg\.endpoint|ENDPOINT)/, 'real fetch submission (no fake success)'],
+  [/data-netlify/i, 'no leftover Netlify-only attributes', true /* expectAbsent */],
+];
+function checkForm(file, label, extraChecks, fields) {
+  if (!existsSync(join(ROOT, file))) { err(`${label}: page ${file} not found.`); return; }
+  const c = readFileSync(join(ROOT, file), 'utf8');
+  for (const [re, desc, expectAbsent] of [...COMMON_FORM_CHECKS, ...extraChecks]) {
     const present = re.test(c);
-    if (expectAbsent ? !present : present) pass(`Form: ${label}.`); else err(`Form: ${expectAbsent ? 'found unexpected' : 'missing'} — ${label}.`);
+    if (expectAbsent ? !present : present) pass(`${label}: ${desc}.`);
+    else err(`${label}: ${expectAbsent ? 'found unexpected' : 'missing'} — ${desc}.`);
   }
-  // required fields the brief asked for
-  for (const field of ['name', 'organization', 'email', 'organization_type', 'staff_count',
-    'current_tools', 'time_consuming_task', 'missed_followup', 'desired_outcome', 'budget',
-    'preferred_contact', 'preferred_times', 'phone', 'consent']) {
-    if (!new RegExp(`name="${field}"`).test(c)) err(`Form: expected field "${field}" not found.`);
+  for (const field of fields) {
+    if (!new RegExp(`name="${field}"`).test(c)) err(`${label}: expected field "${field}" not found.`);
   }
-} else {
-  err(`Form page ${formFile} not found.`);
 }
+checkForm('ai-operations-assessment.html', 'Assessment form', [
+  [/name="consent"[^>]*required/i, 'consent checkbox is required'],
+  [/ai-operations-thank-you\.html/i, 'thank-you redirect referenced'],
+], ['name', 'organization', 'email', 'organization_type', 'staff_count', 'current_tools',
+   'time_consuming_task', 'missed_followup', 'desired_outcome', 'budget', 'preferred_contact',
+   'preferred_times', 'phone', 'consent']);
+checkForm('start-a-project.html', 'Start-a-Project form', [
+  [/project_form_start/, 'form-start analytics event'],
+  [/project_form_error/, 'validation-error analytics event'],
+  [/project_brief_delivered/, 'delivery-confirmed analytics event'],
+  [/project_brief_fallback/, 'fallback analytics event'],
+], ['name', 'email', 'org', 'type', 'stage', 'goals', 'timeline', 'budget', 'message']);
 
 /* ---------- 3. Secret scan (deployed assets) ---------- */
 const SECRET_PATTERNS = [
