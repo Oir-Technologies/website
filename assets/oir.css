@@ -204,7 +204,7 @@ em.gold, .gold-text { color: var(--gold-deep); font-style: italic; }
 /* ---------- Footer ---------- */
 .site-footer { background: var(--navy); color: var(--ivory); padding-top: 80px; }
 .footer-grid {
-  display: grid; grid-template-columns: 1.6fr repeat(4, 1fr); gap: 40px;
+  display: grid; grid-template-columns: 1.5fr repeat(5, 1fr); gap: 36px;
   padding-bottom: 60px; border-bottom: 1px solid var(--line-dark);
 }
 .footer-brand .brand-name { font-family: var(--serif); font-size: 1.7rem; letter-spacing: 0.18em; }

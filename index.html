@@ -102,6 +102,21 @@
   .final-cta .fc-arc { position: absolute; right: -120px; bottom: -160px; width: 360px; height: 360px; border-radius: 50%; border: 1px solid var(--line); }
   .final-cta .fc-arc.two { width: 460px; height: 460px; right: -160px; bottom: -200px; }
   @media (max-width: 880px) { .final-cta .fc-inner { grid-template-columns: 1fr; gap: 28px; text-align: left; } .final-cta .burst { width: 60px; } }
+
+  /* AI Operations band */
+  .aiops-band { position: relative; overflow: hidden; }
+  .aiops-band::before { content:""; position:absolute; inset:0; pointer-events:none;
+    background: radial-gradient(52% 72% at 92% 0%, rgba(201,168,106,.12), transparent 56%); }
+  .aiops-band .ab-inner { position: relative; display:grid; grid-template-columns: 1.05fr .95fr; gap: clamp(40px,5vw,72px); align-items:center; }
+  .aiops-band h2 { font-size: clamp(2rem,3.6vw,3.1rem); } .aiops-band h2 em { color: var(--gold); font-style:italic; }
+  .aiops-band .lead { margin-top: 20px; max-width: 50ch; }
+  .aiops-band .ab-points { display:flex; flex-direction:column; gap:12px; margin:28px 0 34px; padding:0; }
+  .aiops-band .ab-points li { list-style:none; display:grid; grid-template-columns:22px 1fr; gap:12px; color: rgba(250,250,248,.84); font-size:.98rem; line-height:1.5; }
+  .aiops-band .ab-points li svg { color: var(--gold); margin-top:3px; flex:none; }
+  .aiops-band .cta-row { display:flex; gap:14px; flex-wrap:wrap; }
+  .aiops-band .ab-visual { position:relative; }
+  .aiops-band .ab-visual [data-laptop] { width: 100%; }
+  @media (max-width: 940px){ .aiops-band .ab-inner { grid-template-columns:1fr; gap:34px; } }
 </style>
 </head>
 <body data-page="home">
@@ -164,6 +179,30 @@
         <h3>Launch &amp; Growth</h3>
         <p>We launch with you and help your product grow and thrive.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI OPERATIONS DIVISION -->
+<section class="section on-dark aiops-band" data-screen-label="Home — AI Operations">
+  <div class="wrap-wide ab-inner">
+    <div class="reveal">
+      <span class="eyebrow on-dark">New · Oir AI Operations</span>
+      <h2 class="serif" style="margin-top:18px">Practical AI systems for organizations that need to <em>get more done.</em></h2>
+      <p class="lead">A service division of Oir Technologies. We design and implement secure, human-centered AI workflows that reduce repetitive work, strengthen follow-up, and make everyday operations easier — for synagogues, nonprofits, schools, and growing businesses.</p>
+      <ul class="ab-points">
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 13l4 4L19 7"/></svg> Cut hours of repetitive admin every week</li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 13l4 4L19 7"/></svg> Never let a donor, member, or inquiry fall through the cracks</li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 13l4 4L19 7"/></svg> Start with a clear assessment from $750 — not a vague retainer</li>
+      </ul>
+      <div class="cta-row">
+        <a class="btn btn-gold btn-lg" href="ai-operations.html" data-analytics="cta_home_aiops">Explore AI Operations <svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost btn-lg" href="ai-operations-demo.html" data-analytics="cta_home_aiops_demo">See the Live Demo</a>
+      </div>
+    </div>
+    <div class="ab-visual reveal d1">
+      <div data-laptop></div>
+      <p class="illus-note">Illustrative operations dashboard — sample data shown.</p>
     </div>
   </div>
 </section>

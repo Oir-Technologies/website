@@ -3,11 +3,12 @@
    ============================================================ */
 (function () {
   const PAGES = [
-    { id: 'work',     label: 'Work',     href: 'case-studies.html' },
-    { id: 'products', label: 'Products', href: 'products.html' },
-    { id: 'services', label: 'Services', href: 'services.html' },
-    { id: 'approach', label: 'Approach', href: 'approach.html' },
-    { id: 'about',    label: 'About',    href: 'about.html' },
+    { id: 'work',          label: 'Work',          href: 'case-studies.html' },
+    { id: 'products',      label: 'Products',      href: 'products.html' },
+    { id: 'ai-operations', label: 'AI Operations', href: 'ai-operations.html' },
+    { id: 'services',      label: 'Services',      href: 'services.html' },
+    { id: 'approach',      label: 'Approach',      href: 'approach.html' },
+    { id: 'about',         label: 'About',         href: 'about.html' },
   ];
   const current = document.body.getAttribute('data-page') || '';
 
@@ -15,7 +16,9 @@
   const mark = `<svg class="mark" viewBox="0 0 40 40" fill="none" role="img" aria-label="Oir Technologies"><path d="M20 4 C 22.4 11, 27 14.4, 27 21.8 C 27 28.6 23.2 33.8 20 33.8 C 16.8 33.8 13 28.6 13 21.8 C 13 15 16.2 11.4 20 4 Z" fill="#C9A86A"/><path d="M20 17.5 C 21.1 20.4, 22.8 21.8, 22.8 25.2 C 22.8 28.4 21.5 30.8 20 30.8 C 18.5 30.8 17.2 28.4 17.2 25.2 C 17.2 22 18.9 19.2 20 17.5 Z" fill="#FBF4E2"/></svg>`;
 
   /* ---------- Header ---------- */
-  const isActive = (id) => current === id || (id === 'products' && current.indexOf('product-') === 0);
+  const isActive = (id) => current === id
+    || (id === 'products' && current.indexOf('product-') === 0)
+    || (id === 'ai-operations' && current.indexOf('ai-operations') === 0);
   const navLinks = PAGES.map(p =>
     `<a href="${p.href}"${isActive(p.id) ? ' aria-current="page"' : ''} class="${isActive(p.id) ? 'active' : ''}">${p.label}</a>`).join('');
 
@@ -87,6 +90,9 @@
           <div class="footer-col"><h4>Products</h4>
             <a href="product-shidduch.html">Shidduch App</a><a href="product-yad-parnasa.html">Yad Parnasa</a>
             <a href="product-gemach-network.html">Gemach Network</a><a href="products.html">All Products</a></div>
+          <div class="footer-col"><h4>AI Operations</h4>
+            <a href="ai-operations.html">Overview</a><a href="ai-operations.html#packages">Services &amp; Pricing</a>
+            <a href="ai-operations-demo.html">Live Demo</a><a href="ai-operations-assessment.html" data-analytics="cta_footer_aiops_book">Book an Assessment</a></div>
           <div class="footer-col"><h4>How We Build</h4>
             <a href="approach.html">Our Approach</a><a href="approach.html#principles">Our Principles</a>
             <a href="approach.html#engineering">Engineering & Security</a><a href="case-studies.html">Case Studies</a></div>

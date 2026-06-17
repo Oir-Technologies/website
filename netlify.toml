@@ -3,6 +3,19 @@
   publish = "."
   command = ""
 
+# Clean primary URL for the AI Operations landing page.
+# 1) Normalize the trailing-slash form to the canonical no-slash URL.
+[[redirects]]
+  from = "/ai-operations/"
+  to = "/ai-operations"
+  status = 301
+# 2) Serve ai-operations.html at the clean /ai-operations URL (no visible .html).
+#    Relative asset paths resolve to /assets/* correctly from this URL.
+[[redirects]]
+  from = "/ai-operations"
+  to = "/ai-operations.html"
+  status = 200
+
 # Long-lived, immutable caching for fingerprint-safe static assets
 [[headers]]
   for = "/assets/*"

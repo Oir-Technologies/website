@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Demo — How an Oir AI Workflow Handles an Inquiry | Oir Technologies</title>
+<meta name="description" content="A safe, interactive demonstration of an Oir AI Operations workflow: it sorts an incoming inquiry, summarizes it, flags urgency, suggests an owner, drafts a reply for staff approval, and logs a follow-up task.">
+<link rel="canonical" href="https://oirtechnologies.com/ai-operations-demo.html">
+<meta name="theme-color" content="#07111F">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="apple-touch-icon" href="assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Oir Technologies">
+<meta property="og:title" content="Live Demo — How an Oir AI Workflow Handles an Inquiry">
+<meta property="og:description" content="A safe, interactive demonstration of an Oir AI Operations inquiry-handling workflow, with human approval built in.">
+<meta property="og:url" content="https://oirtechnologies.com/ai-operations-demo.html">
+<meta property="og:image" content="https://oirtechnologies.com/assets/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Live Demo — How an Oir AI Workflow Handles an Inquiry">
+<meta name="twitter:description" content="A safe, interactive demonstration of an Oir AI Operations inquiry-handling workflow.">
+<meta name="twitter:image" content="https://oirtechnologies.com/assets/og-image.svg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Oir AI Operations — Live Demo","url":"https://oirtechnologies.com/ai-operations-demo.html","isPartOf":{"@type":"WebSite","name":"Oir Technologies","url":"https://oirtechnologies.com"},"publisher":{"@type":"Organization","name":"Oir Technologies"}}
+</script>
+<script defer src="assets/analytics.js"></script>
+<link rel="stylesheet" href="assets/oir.css">
+<link rel="stylesheet" href="assets/oir-aiops.css">
+<style>
+  body[data-page="ai-operations-demo"] { --hh: 84px; }
+  @media (max-width: 620px) { body[data-page="ai-operations-demo"] { --hh: 70px; } }
+  .demo-hero { position: relative; background: var(--navy); color: var(--ivory); overflow: hidden; margin-top: calc(-1 * var(--hh,84px)); }
+  .demo-hero::before { content:""; position:absolute; inset:0; pointer-events:none; background: radial-gradient(54% 70% at 80% 0%, rgba(201,168,106,.12), transparent 58%); }
+  .demo-hero-inner { position:relative; padding-block: calc(var(--hh,84px) + 40px) 50px; max-width: 760px; }
+  .demo-hero .cat { display:inline-flex; align-items:center; gap:9px; font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); font-weight:600; }
+  .demo-hero h1 { font-size: clamp(2.3rem,4.4vw,3.6rem); line-height:1.05; margin-top:18px; } .demo-hero h1 em { color:var(--gold); font-style:italic; }
+  .demo-hero .lead { color: rgba(250,250,248,.78); margin-top:20px; max-width:60ch; }
+
+  /* Disclosure banner */
+  .demo-banner { background: var(--navy-2); color: var(--ivory); border-top:1px solid var(--line-dark); border-bottom:1px solid var(--line-dark); }
+  .demo-banner .wrap { display:flex; gap:14px; align-items:flex-start; padding-block: 18px; }
+  .demo-banner svg { color: var(--gold); flex:none; margin-top:2px; }
+  .demo-banner p { margin:0; font-size:.92rem; line-height:1.55; color: rgba(250,250,248,.82); }
+  .demo-banner b { color: var(--ivory); }
+
+  .demo-stage { background: var(--ivory); }
+  .demo-grid { display:grid; grid-template-columns: 0.95fr 1.05fr; gap: clamp(24px,3vw,40px); align-items:start; }
+  .demo-panel { background:#fff; border:1px solid rgba(12,22,38,.06); border-radius: var(--radius-lg); box-shadow: var(--shadow-card); padding: clamp(22px,2.6vw,30px); }
+  .demo-panel .dp-step { font-size:.68rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-deep); font-weight:600; }
+  .demo-panel h2 { font-size: 1.5rem; margin:8px 0 4px; }
+  .demo-panel .dp-sub { color: var(--gray); font-size:.92rem; margin-bottom: 20px; }
+  .preset-row { display:flex; flex-direction:column; gap:10px; margin-bottom:18px; }
+  .preset { text-align:left; padding:14px 16px; border:1px solid var(--line-light); border-radius: var(--radius-sm); background: var(--ivory); cursor:pointer; transition:.2s; display:flex; gap:12px; align-items:flex-start; }
+  .preset:hover { border-color: var(--gold); background:#fff; }
+  .preset.on { border-color: var(--navy); background:#fff; box-shadow: 0 0 0 2px rgba(7,17,31,.06); }
+  .preset .pp-from { font-weight:600; font-size:.9rem; color:var(--ink); }
+  .preset .pp-text { color:var(--gray); font-size:.86rem; line-height:1.5; margin-top:3px; }
+  .preset .pp-ic { width:30px; height:30px; border-radius:8px; background:var(--ivory-2); color:var(--gold-deep); display:grid; place-items:center; flex:none; }
+  .demo-or { text-align:center; font-size:.74rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gray-light); margin:6px 0 14px; position:relative; }
+  textarea#inquiry { width:100%; font-family:var(--body); font-size:.96rem; color:var(--ink); padding:13px 15px; border:1px solid var(--line-light); border-radius: var(--radius-sm); background: var(--ivory); min-height: 96px; resize:vertical; outline:none; transition:.2s; }
+  textarea#inquiry:focus { border-color:var(--gold); box-shadow:0 0 0 3px rgba(201,168,106,.16); background:#fff; }
+  .demo-actions { display:flex; gap:12px; align-items:center; margin-top:16px; flex-wrap:wrap; }
+  .approval-note { display:flex; gap:9px; align-items:center; font-size:.82rem; color:var(--ink-soft); margin-top:16px; padding:12px 14px; background:rgba(201,168,106,.08); border:1px solid var(--line); border-radius:var(--radius-sm); }
+  .approval-note svg { color:var(--gold-deep); flex:none; }
+
+  /* Pipeline */
+  .pipe { display:flex; flex-direction:column; gap:0; }
+  .pipe-empty { color:var(--gray); font-size:.94rem; text-align:center; padding:40px 20px; border:1px dashed var(--line-light); border-radius:var(--radius); }
+  .pl { display:grid; grid-template-columns: 38px 1fr; gap:14px; padding:16px 0; border-top:1px solid var(--line-light); opacity:0; transform: translateY(8px); transition: opacity .35s, transform .35s; }
+  .pl.show { opacity:1; transform:none; }
+  .pl:first-child { border-top:none; }
+  .pl .pl-n { width:30px; height:30px; border-radius:50%; background:var(--navy); color:var(--gold); display:grid; place-items:center; font-size:.8rem; font-family:var(--serif); flex:none; }
+  .pl .pl-l { font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-deep); font-weight:600; }
+  .pl .pl-v { color:var(--ink); font-size:.98rem; margin-top:3px; line-height:1.5; }
+  .pl .pl-v .draft { background:var(--ivory); border:1px solid var(--line-light); border-left:3px solid var(--gold); border-radius:8px; padding:12px 14px; font-size:.92rem; color:var(--ink-soft); line-height:1.55; white-space:pre-line; }
+  .badge { display:inline-flex; align-items:center; gap:6px; padding:4px 11px; border-radius:100px; font-size:.72rem; font-weight:600; letter-spacing:.02em; }
+  .badge::before { content:""; width:7px; height:7px; border-radius:50%; background:currentColor; }
+  .u-high { background:rgba(192,57,43,.1); color:#b5402f; }
+  .u-med { background:rgba(168,133,74,.14); color:var(--gold-deep); }
+  .u-low { background:rgba(91,189,126,.14); color:#3f9d68; }
+  .pending { background:rgba(168,133,74,.14); color:var(--gold-deep); margin-top:8px; }
+
+  /* Dashboard */
+  .demo-dash { margin-top: clamp(24px,3vw,36px); }
+  .dash-card { background:#fff; border:1px solid rgba(12,22,38,.06); border-radius:var(--radius-lg); box-shadow:var(--shadow-card); overflow:hidden; }
+  .dash-head { display:flex; justify-content:space-between; align-items:center; gap:12px; padding:20px 24px; border-bottom:1px solid var(--line-light); flex-wrap:wrap; }
+  .dash-head h2 { font-size:1.3rem; }
+  .dash-head .dh-meta { font-size:.84rem; color:var(--gray); }
+  .table-wrap { overflow-x:auto; }
+  table.dash { width:100%; border-collapse:collapse; min-width:620px; }
+  table.dash th { text-align:left; font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:var(--gray); font-weight:600; padding:14px 16px; border-bottom:1px solid var(--line-light); background:var(--ivory); }
+  table.dash td { padding:14px 16px; border-bottom:1px solid var(--line-light); font-size:.92rem; color:var(--ink-soft); vertical-align:top; }
+  table.dash tr:last-child td { border-bottom:none; }
+  .dash-empty td { text-align:center; color:var(--gray); padding:34px 16px; }
+  .status-chip { display:inline-flex; align-items:center; gap:7px; font-size:.82rem; color:var(--gold-deep); font-weight:500; }
+  .status-chip svg { flex:none; }
+
+  /* Explain + CTA */
+  .demo-explain { background: var(--ivory-2); }
+  .ex-grid { display:grid; grid-template-columns: repeat(3,1fr); gap: clamp(18px,2.4vw,28px); margin-top:40px; }
+  .ex-card { background:#fff; border:1px solid rgba(12,22,38,.05); border-radius:var(--radius); padding:26px; box-shadow:var(--shadow-card); }
+  .ex-card h3 { font-family:var(--body); font-weight:600; font-size:1.05rem; margin-bottom:8px; }
+  .ex-card p { color:var(--gray); font-size:.93rem; line-height:1.55; margin:0; }
+  @media (max-width: 920px){ .demo-grid { grid-template-columns:1fr; } .ex-grid { grid-template-columns:1fr; } }
+</style>
+</head>
+<body data-page="ai-operations-demo">
+<header id="site-header"></header>
+
+<!-- HERO -->
+<section class="demo-hero" data-screen-label="AI Operations — Live Demo">
+  <div class="wrap demo-hero-inner">
+    <div class="cat"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 3v4M3 5h4M6 17v4M4 19h4M13 3l2.5 6.5L22 12l-6.5 2.5L13 21l-2.5-6.5L4 12l6.5-2.5L13 3z"/></svg> Interactive Demo</div>
+    <h1>Watch a workflow handle an inquiry — <em>with a person in control.</em></h1>
+    <p class="lead">This is a simple, hands-on look at one common Oir AI Operations workflow. Pick an example message (or write your own) and watch it get sorted, summarized, prioritized, routed, and turned into a draft reply and a follow-up task — all ready for staff to approve.</p>
+  </div>
+</section>
+
+<!-- DISCLOSURE BANNER -->
+<section class="demo-banner">
+  <div class="wrap">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01"/></svg>
+    <p><b>About this demo:</b> It runs entirely in your browser using fixed example logic and fictional data — nothing you type is sent anywhere or stored. A production system uses secure AI models tailored to your organization, and <b>a staff member always reviews and approves output before anything is sent</b>.</p>
+  </div>
+</section>
+
+<!-- DEMO STAGE -->
+<section class="section-sm demo-stage">
+  <div class="wrap">
+    <div class="demo-grid">
+      <!-- INPUT -->
+      <div class="demo-panel reveal">
+        <div class="dp-step">Step 1</div>
+        <h2>Choose or write an inquiry</h2>
+        <p class="dp-sub">These examples are fictional, created just for this demo.</p>
+        <div class="preset-row" id="presets"></div>
+        <div class="demo-or">— or write your own —</div>
+        <label for="inquiry" style="display:block;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;margin-bottom:9px">Inquiry message</label>
+        <textarea id="inquiry" placeholder="e.g. Hi, we'd like to reserve the hall for a kiddush — who should I speak with?"></textarea>
+        <div class="demo-actions">
+          <button class="btn btn-gold" id="runBtn" data-analytics="demo_run">Process inquiry <svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <button class="btn btn-outline" id="resetBtn" type="button">Reset</button>
+        </div>
+        <div class="approval-note">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+          Nothing is ever sent automatically. Every draft waits for a staff member's review.
+        </div>
+      </div>
+
+      <!-- PIPELINE -->
+      <div class="demo-panel reveal d1">
+        <div class="dp-step">Step 2</div>
+        <h2>What the workflow does</h2>
+        <p class="dp-sub">Seven steps, in seconds — then it's ready for your team.</p>
+        <div class="pipe" id="pipe" aria-live="polite">
+          <div class="pipe-empty" id="pipeEmpty">Choose an example or write a message, then press <b>Process inquiry</b> to see the workflow run.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div class="demo-dash reveal">
+      <div class="dash-card">
+        <div class="dash-head">
+          <div><div class="dp-step" style="font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);font-weight:600">Step 3</div><h2>Operations dashboard</h2></div>
+          <div class="dh-meta" id="dashMeta">No inquiries processed yet</div>
+        </div>
+        <div class="table-wrap">
+          <table class="dash">
+            <thead><tr><th>Inquiry from</th><th>Category</th><th>Urgency</th><th>Suggested owner</th><th>Status</th></tr></thead>
+            <tbody id="dashBody">
+              <tr class="dash-empty"><td colspan="5">Processed inquiries will appear here — each one ready for staff review.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPLAIN -->
+<section class="section-sm demo-explain">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">From Demo to Real System</span>
+      <h2 class="h-lg">What this looks like for your team.</h2>
+    </div>
+    <div class="ex-grid">
+      <div class="ex-card reveal"><h3>It fits your tools</h3><p>In a real setup, this runs quietly inside your inbox, forms, and spreadsheets — staff barely change how they work.</p></div>
+      <div class="ex-card reveal d1"><h3>It stays accurate</h3><p>Categories, owners, and reply templates are tuned to your organization, and improved over time with your feedback.</p></div>
+      <div class="ex-card reveal d2"><h3>People stay in charge</h3><p>Drafts and tasks are prepared for review. Your staff approve, edit, or redirect — the AI never has the final word.</p></div>
+    </div>
+    <div class="aiops-cta-band" style="border-radius:var(--radius-lg);margin-top:46px;padding:clamp(34px,4vw,56px) 24px">
+      <div class="wrap" style="max-width:680px;text-align:center">
+        <h2 class="serif" style="color:var(--ivory)">Want this for <em>your</em> organization?</h2>
+        <p class="lead">Start with an assessment and we'll show you exactly which workflow would save your team the most time.</p>
+        <div class="cta-row">
+          <a class="btn btn-gold btn-lg" href="ai-operations-assessment.html" data-analytics="cta_demo_book">Book an AI Operations Assessment <svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-ghost btn-lg" href="ai-operations.html" data-analytics="cta_demo_overview">Back to Overview</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="site-footer"></footer>
+<script src="assets/oir-mockups.js"></script>
+<script src="assets/oir-tweaks.js"></script>
+<script src="assets/oir.js"></script>
+<script>
+(function(){
+  // ---------- Fictional example inquiries (safe to show publicly) ----------
+  var PRESETS = [
+    { from:'Sarah Friedman', icon:'gift',
+      text:"Hi, I'd like to set up a monthly donation in memory of my father. Could someone walk me through the options? Thank you so much." },
+    { from:'David Klein', icon:'alert',
+      text:"The heat isn't working in the main hall and we have a program tonight. Please call me as soon as possible — this is urgent!" },
+    { from:'Rivka Stern', icon:'school',
+      text:"We're interested in enrolling our daughter for next year. What's the application process, and are there any upcoming open houses?" },
+    { from:'Yossi Berman', icon:'calendar',
+      text:"Can we reserve the social hall for a kiddush on Shabbos in a few weeks? We're expecting about 80 people. Who should I coordinate with?" }
+  ];
+  var ICONS = {
+    gift:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M5 12v9h14v-9M12 8v13M12 8S10 3 7.5 4 9.5 8 12 8zm0 0s2-5 4.5-4-2.5 4-4.5 4z"/></svg>',
+    alert:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M10.3 3.6 1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.6a2 2 0 00-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg>',
+    school:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg>',
+    calendar:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>'
+  };
+
+  // ---------- Transparent rule-based classification (no network, no AI call) ----------
+  var RULES = [
+    { cat:'Donation & giving', owner:'Development office', kw:['donat','donor','gift','pledge','contribut','sponsor','tzedak','fund','bequest','memory of','legacy'],
+      draft:"Dear {first},\n\nThank you so much for your generosity and for thinking of us. We'd be honored to help you set this up, and we'll send over a few simple options.\n\nWarmly,\nThe Development Office" },
+    { cat:'Facilities & urgent', owner:'Operations / facilities', kw:['heat','broken','leak','flood','repair','urgent','emergency','no power','electric','locked','alarm','ac ','air condition','boiler','plumb'],
+      draft:"Hi {first},\n\nThank you for flagging this — we're treating it as a priority. Our facilities lead has been notified and will reach out to you shortly to resolve it.\n\nBest,\nOperations" },
+    { cat:'Enrollment & membership', owner:'Admissions / membership', kw:['enroll','admission','apply','application','membership','member','join','register','tuition','open house','dues','student'],
+      draft:"Dear {first},\n\nThank you for your interest! Here's a quick overview of the next steps, and we'd love to invite you to an upcoming open house. We'll follow up with the details.\n\nWarmly,\nAdmissions" },
+    { cat:'Events & scheduling', owner:'Events coordinator', kw:['reserve','hall','event','rsvp','kiddush','simcha','book the','room','schedule','date','venue','catering'],
+      draft:"Hi {first},\n\nThank you for reaching out! We'd be glad to help. We'll check availability for the date you mentioned and confirm the details with you shortly.\n\nBest,\nEvents" }
+  ];
+  var DEFAULT_RULE = { cat:'General inquiry', owner:'Front office',
+    draft:"Hi {first},\n\nThank you for reaching out — we've received your message. The right person on our team will get back to you shortly.\n\nBest,\nThe Office" };
+
+  var HIGH = ['urgent','emergency','asap','immediately','right away','today','tonight','now','broken','leak','flood','no heat','no power','locked out'];
+  var MED  = ['soon','this week','tomorrow','by friday','before shabbos','deadline','next week','shortly','quick'];
+
+  function classify(text){
+    var t = (' ' + text + ' ').toLowerCase();
+    var best = DEFAULT_RULE, bestScore = 0;
+    RULES.forEach(function(r){
+      var score = 0;
+      r.kw.forEach(function(k){ if(t.indexOf(k) !== -1) score++; });
+      if(score > bestScore){ bestScore = score; best = r; }
+    });
+    // urgency
+    var urgency = 'Low';
+    if(best.cat === 'Facilities & urgent') urgency = 'High';
+    if(HIGH.some(function(k){ return t.indexOf(k) !== -1; })) urgency = 'High';
+    else if(MED.some(function(k){ return t.indexOf(k) !== -1; })) urgency = (urgency === 'High' ? 'High' : 'Medium');
+    return { rule: best, urgency: urgency };
+  }
+  function summarize(text){
+    var clean = text.replace(/\s+/g,' ').trim();
+    var first = clean.split(/(?<=[.!?])\s/)[0] || clean;
+    if(first.length > 130) first = first.slice(0,127).replace(/\s+\S*$/,'') + '…';
+    return first;
+  }
+  function due(urgency){ return urgency === 'High' ? 'Today' : (urgency === 'Medium' ? 'Within 2 days' : 'This week'); }
+  function urgClass(u){ return u === 'High' ? 'u-high' : (u === 'Medium' ? 'u-med' : 'u-low'); }
+  function esc(s){ return (s||'').replace(/[&<>"]/g, function(c){ return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]; }); }
+
+  // ---------- Render ----------
+  var presetsEl = document.getElementById('presets');
+  var inquiryEl = document.getElementById('inquiry');
+  var pipeEl = document.getElementById('pipe');
+  var pipeEmpty = document.getElementById('pipeEmpty');
+  var dashBody = document.getElementById('dashBody');
+  var dashMeta = document.getElementById('dashMeta');
+  var runBtn = document.getElementById('runBtn');
+  var resetBtn = document.getElementById('resetBtn');
+  var processed = 0;
+  var currentFrom = null;
+
+  PRESETS.forEach(function(p, i){
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'preset';
+    b.innerHTML = '<span class="pp-ic">'+ICONS[p.icon]+'</span><span><span class="pp-from">'+esc(p.from)+'</span><span class="pp-text">'+esc(p.text)+'</span></span>';
+    b.addEventListener('click', function(){
+      presetsEl.querySelectorAll('.preset').forEach(function(x){ x.classList.remove('on'); });
+      b.classList.add('on');
+      inquiryEl.value = p.text;
+      currentFrom = p.from;
+    });
+    presetsEl.appendChild(b);
+  });
+  // typing clears the selected preset's sender
+  inquiryEl.addEventListener('input', function(){
+    presetsEl.querySelectorAll('.preset').forEach(function(x){ x.classList.remove('on'); });
+    currentFrom = null;
+  });
+
+  function step(n, label, valueHtml){
+    var d = document.createElement('div');
+    d.className = 'pl';
+    d.innerHTML = '<div class="pl-n">'+n+'</div><div><div class="pl-l">'+label+'</div><div class="pl-v">'+valueHtml+'</div></div>';
+    pipeEl.appendChild(d);
+    return d;
+  }
+
+  function run(){
+    var text = (inquiryEl.value || '').trim();
+    if(!text){ inquiryEl.focus(); return; }
+    var from = currentFrom || 'Website visitor';
+    var first = (currentFrom ? currentFrom.split(' ')[0] : 'there');
+    var res = classify(text);
+    var rule = res.rule, urgency = res.urgency;
+    var owner = rule.owner, cat = rule.cat;
+    var draft = rule.draft.replace('{first}', first);
+
+    // reset pipe
+    if(pipeEmpty) pipeEmpty.style.display = 'none';
+    pipeEl.innerHTML = '';
+
+    var steps = [
+      ['Sorted into a category', '<span class="badge u-med" style="background:rgba(7,17,31,.06);color:var(--navy)">'+esc(cat)+'</span>'],
+      ['Short summary', esc(summarize(text))],
+      ['Urgency', '<span class="badge '+urgClass(urgency)+'">'+urgency+'</span>'],
+      ['Suggested owner', esc(owner)],
+      ['Draft reply prepared', '<div class="draft">'+esc(draft)+'</div><span class="badge pending">Pending staff approval</span>'],
+      ['Follow-up task created', 'Reply to '+esc(from)+' about '+esc(cat.toLowerCase())+' &middot; <b>Due: '+due(urgency)+'</b> &middot; Owner: '+esc(owner)],
+      ['Added to dashboard', 'Logged below for your team to review.']
+    ];
+
+    // staggered reveal (reliable: each step is appended then shown)
+    var i = 0;
+    runBtn.disabled = true;
+    (function next(){
+      if(i >= steps.length){
+        runBtn.disabled = false;
+        addToDash(from, cat, urgency, owner);
+        return;
+      }
+      var el = step(i+1, steps[i][0], steps[i][1]);
+      // force reflow then show
+      requestAnimationFrame(function(){ el.classList.add('show'); });
+      i++;
+      setTimeout(next, 360);
+    })();
+  }
+
+  function addToDash(from, cat, urgency, owner){
+    var empty = dashBody.querySelector('.dash-empty');
+    if(empty) empty.remove();
+    var tr = document.createElement('tr');
+    tr.innerHTML =
+      '<td><b style="color:var(--ink)">'+esc(from)+'</b></td>'+
+      '<td>'+esc(cat)+'</td>'+
+      '<td><span class="badge '+urgClass(urgency)+'">'+urgency+'</span></td>'+
+      '<td>'+esc(owner)+'</td>'+
+      '<td><span class="status-chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg>Draft ready — pending approval</span></td>';
+    dashBody.insertBefore(tr, dashBody.firstChild);
+    processed++;
+    dashMeta.textContent = processed + (processed === 1 ? ' inquiry' : ' inquiries') + ' processed this session · all awaiting staff review';
+  }
+
+  runBtn.addEventListener('click', run);
+  resetBtn.addEventListener('click', function(){
+    inquiryEl.value = '';
+    presetsEl.querySelectorAll('.preset').forEach(function(x){ x.classList.remove('on'); });
+    currentFrom = null;
+    pipeEl.innerHTML = '';
+    pipeEl.appendChild(pipeEmpty);
+    pipeEmpty.style.display = '';
+    inquiryEl.focus();
+  });
+})();
+</script>
+</body>
+</html>
