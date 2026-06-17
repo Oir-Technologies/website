@@ -1,20 +1,9 @@
 # Oir Technologies — Netlify configuration (static site, no build step)
+# NOTE: Production currently deploys on Vercel; this file is retained for an
+# optional Netlify fallback. Canonical URLs use the .html form on both hosts.
 [build]
   publish = "."
   command = ""
-
-# Clean primary URL for the AI Operations landing page.
-# 1) Normalize the trailing-slash form to the canonical no-slash URL.
-[[redirects]]
-  from = "/ai-operations/"
-  to = "/ai-operations"
-  status = 301
-# 2) Serve ai-operations.html at the clean /ai-operations URL (no visible .html).
-#    Relative asset paths resolve to /assets/* correctly from this URL.
-[[redirects]]
-  from = "/ai-operations"
-  to = "/ai-operations.html"
-  status = 200
 
 # Long-lived, immutable caching for fingerprint-safe static assets
 [[headers]]

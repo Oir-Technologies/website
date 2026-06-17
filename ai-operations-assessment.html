@@ -24,6 +24,17 @@
 {"@context":"https://schema.org","@type":"ContactPage","name":"Book an AI Operations Assessment — Oir Technologies","url":"https://oirtechnologies.com/ai-operations-assessment.html","publisher":{"@type":"Organization","name":"Oir Technologies"}}
 </script>
 <script defer src="assets/analytics.js"></script>
+<!-- ▼▼ LEAD CAPTURE SETUP (owner: do this once) ▼▼
+     To send assessment requests straight to your inbox, uncomment and fill ONE line below.
+     Recommended: Web3Forms (free, no account — just verify your email at https://web3forms.com).
+     The access key is PUBLIC by design, so it's safe to put here. No secret keys.
+     Until you set this, the form opens a pre-filled email instead, so no lead is ever lost. -->
+<script>
+  // window.OIR_FORM_ENDPOINT  = 'https://api.web3forms.com/submit';
+  // window.OIR_FORM_ACCESS_KEY = 'paste-your-public-web3forms-access-key';
+  // — or Formspree: window.OIR_FORM_ENDPOINT = 'https://formspree.io/f/your-form-id';
+</script>
+<!-- ▲▲ END LEAD CAPTURE SETUP ▲▲ -->
 <link rel="stylesheet" href="assets/oir.css">
 <link rel="stylesheet" href="assets/oir-mockups.css">
 <style>
@@ -106,14 +117,14 @@
     <!-- FORM -->
     <div class="reveal d1">
       <div class="form-card">
-        <!-- Netlify Forms: captured server-side at deploy. No credentials in client code.
-             Submissions appear in the Netlify dashboard (Forms) and can be emailed to staff. -->
-        <form id="aiOpsForm" name="ai-operations-assessment" method="POST"
-              data-netlify="true" netlify-honeypot="bot-field"
-              action="/ai-operations-thank-you.html" novalidate>
-          <input type="hidden" name="form-name" value="ai-operations-assessment">
-          <p style="display:none">
-            <label>Don't fill this out if you're human: <input name="bot-field"></label>
+        <!-- Lead capture posts to a configurable form endpoint (set OIR_FORM_ENDPOINT in
+             the head below). Web3Forms/Formspree IDs are PUBLIC by design — no secret keys
+             belong here. Until an endpoint is set, submissions fall back to a pre-filled
+             email to staff, so a lead is never lost. -->
+        <form id="aiOpsForm" name="ai-operations-assessment" method="POST" novalidate>
+          <!-- Honeypot spam trap: humans leave it empty; bots fill it. Also recognized by Web3Forms. -->
+          <p style="display:none" aria-hidden="true">
+            <label>Leave this field empty: <input type="text" name="botcheck" tabindex="-1" autocomplete="off"></label>
           </p>
 
           <div class="fc-title">Book your assessment</div>
@@ -205,41 +216,90 @@
   var form = document.getElementById('aiOpsForm');
   if(!form) return;
 
-  // Lightweight client-side validation. On success, the native POST proceeds to
-  // Netlify, which records the submission and redirects to the thank-you page.
-  function setInvalid(field, bad){
-    if(!field) return;
-    field.classList.toggle('invalid', !!bad);
-  }
+  // Public, credential-free config (set in the head, or via assets). Web3Forms/Formspree
+  // identifiers are public by design — nothing secret is ever placed in client code.
+  var ENDPOINT   = (window.OIR_FORM_ENDPOINT || '').trim();     // e.g. https://api.web3forms.com/submit
+  var ACCESS_KEY = (window.OIR_FORM_ACCESS_KEY || '').trim();   // Web3Forms access key (optional)
+  var CONTACT    = 'hello@oirtechnologies.com';
+  var THANKYOU   = 'ai-operations-thank-you.html';
+
+  function setInvalid(field, bad){ if(field) field.classList.toggle('invalid', !!bad); }
+
   var started = false;
   form.addEventListener('focusin', function(){
     if(started) return; started = true;
     if(window.oirAnalytics) window.oirAnalytics.track('ai_ops_form_start', { page:'assessment' });
-  }, { once:false });
+  });
 
-  form.addEventListener('submit', function(e){
+  function validate(){
     var ok = true;
     form.querySelectorAll('[required]').forEach(function(f){
-      var field = f.closest('.field');
       if(f.type === 'checkbox'){
         var ce = document.getElementById('consentError');
         var bad = !f.checked;
-        if(ce){ ce.querySelector('.field-error').style.display = bad ? 'block' : 'none'; }
-        if(bad) ok = false;
-        return;
+        if(ce) ce.querySelector('.field-error').style.display = bad ? 'block' : 'none';
+        if(bad) ok = false; return;
       }
       var bad = !f.value.trim() || (f.type==='email' && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.value));
-      setInvalid(field, bad);
+      setInvalid(f.closest('.field'), bad);
       if(bad) ok = false;
     });
-    if(!ok){
-      e.preventDefault();
+    return ok;
+  }
+
+  function val(n){ var el = form.elements[n]; return el ? (el.value||'').trim() : ''; }
+
+  function showNotice(){
+    var n = form.querySelector('.aiops-inline-notice') || document.createElement('div');
+    n.className = 'aiops-inline-notice';
+    n.style.cssText = 'margin-top:16px;padding:14px 16px;border:1px solid var(--line-light);border-left:3px solid var(--gold-deep);border-radius:8px;background:var(--ivory);color:var(--ink-soft);font-size:.92rem;line-height:1.55';
+    n.innerHTML = 'Your email app should open with your request ready to send — just press <b>Send</b>. If it didn’t, please email us directly at <a href="mailto:' + CONTACT + '" style="color:var(--gold-deep)">' + CONTACT + '</a>.';
+    form.appendChild(n);
+  }
+
+  function mailtoFallback(){
+    // No endpoint configured (or the request failed): never lose the lead.
+    var lines = [
+      ['Name', val('name')], ['Organization', val('organization')], ['Email', val('email')],
+      ['Phone', val('phone')], ['Organization type', val('organization_type')],
+      ['Number of staff', val('staff_count')], ['Current tools', val('current_tools')],
+      ['Most time-consuming task', val('time_consuming_task')],
+      ['Where follow-up is missed', val('missed_followup')], ['Desired outcome', val('desired_outcome')],
+      ['Approximate budget', val('budget')], ['Preferred contact', val('preferred_contact')],
+      ['Preferred meeting times', val('preferred_times')], ['Consent to be contacted', form.elements['consent'].checked ? 'Yes' : 'No']
+    ].map(function(p){ return p[0] + ': ' + p[1]; });
+    var href = 'mailto:' + CONTACT
+      + '?subject=' + encodeURIComponent('AI Operations Assessment — ' + (val('organization') || val('name')))
+      + '&body=' + encodeURIComponent(lines.join('\n'));
+    window.location.href = href;
+    showNotice();
+  }
+
+  var submitBtn = form.querySelector('.submit');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    // Honeypot: a filled trap means a bot — quietly pretend success, send nothing.
+    var hp = form.elements['botcheck'];
+    if(hp && hp.value){ window.location.href = THANKYOU; return; }
+
+    if(!validate()){
       var firstBad = form.querySelector('.field.invalid input, .field.invalid select, .field.invalid textarea, #f-consent:not(:checked)');
       if(firstBad && firstBad.focus) firstBad.focus();
       return;
     }
-    // Valid — record intent, then let the form submit naturally to Netlify.
     if(window.oirAnalytics) window.oirAnalytics.track('ai_ops_assessment_submitted', { page:'assessment' });
+
+    if(!ENDPOINT){ mailtoFallback(); return; }
+
+    var orig = submitBtn.innerHTML;
+    submitBtn.disabled = true; submitBtn.textContent = 'Sending…';
+    var fd = new FormData(form);
+    if(ACCESS_KEY) fd.append('access_key', ACCESS_KEY);
+    fd.append('subject', 'AI Operations Assessment — ' + (val('organization') || val('name')));
+    fetch(ENDPOINT, { method:'POST', body: fd, headers: { 'Accept':'application/json' } })
+      .then(function(r){ if(!r.ok) throw new Error('bad status'); })
+      .then(function(){ window.location.href = THANKYOU; })
+      .catch(function(){ submitBtn.disabled = false; submitBtn.innerHTML = orig; mailtoFallback(); });
   });
 })();
 </script>

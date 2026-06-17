@@ -74,22 +74,19 @@ if (errors.length === 0) pass(`Internal links resolve across ${htmlFiles.length}
 const formFile = 'ai-operations-assessment.html';
 if (existsSync(join(ROOT, formFile))) {
   const c = readFileSync(join(ROOT, formFile), 'utf8');
-  const nameMatch = c.match(/<form[^>]*\bname="([^"]+)"/i);
   const checks = [
-    [/<form[^>]*\bdata-netlify="true"/i, 'form has data-netlify="true"'],
-    [/<form[^>]*\bnetlify-honeypot="bot-field"/i, 'form declares a honeypot'],
-    [/<input[^>]*type="hidden"[^>]*name="form-name"/i, 'hidden form-name input present'],
-    [/name="bot-field"/i, 'honeypot field present'],
-    [/<form[^>]*\baction="\/ai-operations-thank-you\.html"/i, 'form redirects to thank-you page'],
+    [/<form[^>]*\bmethod="POST"/i, 'form uses method="POST"'],
+    [/name="botcheck"/i, 'honeypot field present'],
     [/name="consent"[^>]*required/i, 'consent checkbox is required'],
+    [/OIR_FORM_ENDPOINT/, 'configurable form endpoint wired (host-agnostic)'],
+    [/'mailto:'\s*\+\s*CONTACT/, 'mailto fallback so leads are never lost'],
+    [/ai-operations-thank-you\.html/i, 'thank-you redirect referenced'],
+    [/data-netlify/i, 'no leftover Netlify-only form attributes', true /* expectAbsent */],
   ];
-  for (const [re, label] of checks) {
-    if (re.test(c)) pass(`Form: ${label}.`); else err(`Form: missing — ${label}.`);
+  for (const [re, label, expectAbsent] of checks) {
+    const present = re.test(c);
+    if (expectAbsent ? !present : present) pass(`Form: ${label}.`); else err(`Form: ${expectAbsent ? 'found unexpected' : 'missing'} — ${label}.`);
   }
-  // hidden form-name value must match the form name
-  const hiddenVal = c.match(/name="form-name"\s+value="([^"]+)"/i);
-  if (nameMatch && hiddenVal && nameMatch[1] === hiddenVal[1]) pass('Form: form-name matches form name.');
-  else err('Form: hidden form-name value does not match the <form name="…">.');
   // required fields the brief asked for
   for (const field of ['name', 'organization', 'email', 'organization_type', 'staff_count',
     'current_tools', 'time_consuming_task', 'missed_followup', 'desired_outcome', 'budget',
