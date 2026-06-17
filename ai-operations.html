@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oir AI Operations — Practical AI Systems for Organizations | Oir Technologies</title>
+<meta name="description" content="Oir AI Operations designs and implements secure, human-centered AI workflows that reduce admin work and strengthen follow-up — for synagogues, nonprofits, Jewish schools, and small businesses. Assessments start at $750.">
+<link rel="canonical" href="https://oirtechnologies.com/ai-operations.html">
+<meta name="theme-color" content="#07111F">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="apple-touch-icon" href="assets/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Oir Technologies">
+<meta property="og:title" content="Oir AI Operations — Practical AI Systems for Organizations">
+<meta property="og:description" content="Secure, human-centered AI workflows that reduce repetitive work and strengthen follow-up — for Jewish organizations, nonprofits, schools, and small businesses.">
+<meta property="og:url" content="https://oirtechnologies.com/ai-operations.html">
+<meta property="og:image" content="https://oirtechnologies.com/assets/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Oir AI Operations — Practical AI Systems for Organizations">
+<meta name="twitter:description" content="Secure, human-centered AI workflows that reduce repetitive work and strengthen follow-up. Assessments start at $750.">
+<meta name="twitter:image" content="https://oirtechnologies.com/assets/og-image.svg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Service","serviceType":"AI operations consulting and workflow automation","name":"Oir AI Operations","provider":{"@type":"Organization","name":"Oir Technologies","url":"https://oirtechnologies.com"},"description":"Design and implementation of secure, human-centered AI and automation workflows that reduce administrative work, improve follow-up, and make operations easier for nonprofits, synagogues, schools, and small businesses.","areaServed":"United States","audience":{"@type":"Audience","audienceType":"Nonprofits, synagogues and Jewish community organizations, schools, and small businesses"},"url":"https://oirtechnologies.com/ai-operations","offers":[{"@type":"Offer","name":"AI Operations Assessment","price":"750","priceCurrency":"USD","description":"Discovery, workflow review, AI opportunity map, risk and privacy review, and a prioritized 30-day action plan."},{"@type":"Offer","name":"AI Workflow Implementation","price":"3000","priceCurrency":"USD","description":"Build and install one or more practical AI-powered workflows. Final scope and price depend on the workflow."},{"@type":"Offer","name":"Ongoing AI Operations Support","price":"500","priceCurrency":"USD","description":"Monthly monitoring, improvements, staff support, and limited implementation work."}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://oirtechnologies.com/"},{"@type":"ListItem","position":2,"name":"AI Operations","item":"https://oirtechnologies.com/ai-operations.html"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Will AI replace our staff?","acceptedAnswer":{"@type":"Answer","text":"No. Our systems are designed to remove repetitive work so your team can spend time on people and judgment. Every workflow keeps a person in control, and staff review and approve important output."}},{"@type":"Question","name":"How much does it cost?","acceptedAnswer":{"@type":"Answer","text":"Most organizations begin with an AI Operations Assessment, starting at $750. Workflow implementations start at $3,000, and ongoing support starts at $500 per month. Final pricing depends on the specific workflows you choose."}},{"@type":"Question","name":"Do we need to be technical?","acceptedAnswer":{"@type":"Answer","text":"No. We handle the technical work and explain everything in plain language. We also train your staff so the systems are easy to use day to day."}},{"@type":"Question","name":"Is our data kept private?","acceptedAnswer":{"@type":"Answer","text":"Yes. We practice data minimization, keep access controlled, and you own your data. We do not sell client data, and we do not train public models on your confidential information without your authorization."}},{"@type":"Question","name":"How long does it take?","acceptedAnswer":{"@type":"Answer","text":"An assessment is typically completed within a couple of weeks. A first workflow is often live within a few weeks of a signed scope of work, depending on complexity."}},{"@type":"Question","name":"What does the assessment include?","acceptedAnswer":{"@type":"Answer","text":"A discovery meeting, a review of your current workflows, an AI opportunity map, a risk and privacy review, a prioritized implementation plan with an estimate of staff time saved, and a 30-day action plan."}}]}
+</script>
+<script defer src="assets/analytics.js"></script>
+<link rel="stylesheet" href="assets/oir.css">
+<link rel="stylesheet" href="assets/oir-product.css">
+<link rel="stylesheet" href="assets/oir-aiops.css">
+<link rel="stylesheet" href="assets/oir-mockups.css">
+<style>
+  body[data-page="ai-operations"] { --hh: 84px; }
+  @media (max-width: 620px) { body[data-page="ai-operations"] { --hh: 70px; } }
+  section[id] { scroll-margin-top: 96px; }
+  .aiops-hero .avail { display:inline-flex; align-items:center; gap:9px; padding:7px 15px; border:1px solid var(--line-dark);
+    border-radius:100px; font-size:.76rem; color:rgba(250,250,248,.8); margin-bottom:22px; }
+  .aiops-hero .avail span.dot { width:8px; height:8px; border-radius:50%; background:#5bbd7e; box-shadow:0 0 0 3px rgba(91,189,126,.18); }
+  .aiops-intro { background: var(--ivory); }
+  .aiops-intro .mission-lead { max-width: 30ch; }
+  .aiops-intro .intro-grid { display:grid; grid-template-columns: 1fr 1fr; gap: clamp(30px,5vw,70px); align-items:center; }
+  .aiops-intro .intro-copy p { color: var(--ink-soft); font-size: 1.08rem; line-height: 1.64; margin-top: 18px; max-width: 52ch; }
+  .aiops-intro .vp { display:grid; gap:0; }
+  .aiops-intro .vp .v { display:grid; grid-template-columns:44px 1fr; gap:16px; padding:22px 0; border-top:1px solid var(--line-light); align-items:start; }
+  .aiops-intro .vp .v:first-child { border-top:none; padding-top:0; }
+  .aiops-intro .vp .v .vi { width:44px; height:44px; border-radius:12px; display:grid; place-items:center; background:var(--ivory-2); color:var(--gold-deep); flex:none; }
+  .aiops-intro .vp .v h3 { font-family:var(--body); font-weight:600; font-size:1.05rem; margin-bottom:4px; }
+  .aiops-intro .vp .v p { color:var(--gray); font-size:.94rem; margin:0; line-height:1.55; }
+  @media (max-width: 860px){ .aiops-intro .intro-grid { grid-template-columns:1fr; gap:34px; } }
+</style>
+</head>
+<body data-page="ai-operations">
+<header id="site-header"></header>
+
+<!-- 1. HERO -->
+<section class="prod-hero aiops-hero" data-screen-label="AI Operations — Hero">
+  <div class="wrap-wide prod-hero-inner">
+    <div class="reveal">
+      <span class="avail"><span class="dot"></span> A service division of Oir Technologies</span>
+      <div class="cat"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="6" r="2.2"/><circle cx="18" cy="6" r="2.2"/><circle cx="12" cy="18" r="2.2"/><path d="M8.2 6.7 15.8 17M15.8 6.7 8.2 17M8.4 6h7.2"/></svg> Oir AI Operations</div>
+      <h1>Practical AI systems for organizations that need to <em style="color:var(--gold);font-style:italic">get more done.</em></h1>
+      <p class="lead">Oir Technologies designs and implements secure, human-centered AI workflows that reduce repetitive work, strengthen follow-up, and make everyday operations easier.</p>
+      <ul class="hero-points">
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> Built around your team — never to replace it</li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> Clear scope and pricing, from a $750 assessment</li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg> Privacy-first, with human review on every workflow</li>
+      </ul>
+      <div class="cta-row">
+        <a class="btn btn-gold btn-lg" href="ai-operations-assessment.html" data-analytics="cta_aiops_hero_book">Book an AI Operations Assessment <svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost btn-lg" href="#use-cases" data-analytics="cta_aiops_hero_usecases">Explore Use Cases</a>
+      </div>
+    </div>
+    <div class="reveal d1">
+      <div class="aiops-snapshot">
+        <div class="snap-head">
+          <span class="t">A week with Oir AI Operations</span>
+          <span class="status-badge">Illustrative</span>
+        </div>
+        <div class="snap-row"><span class="l">Inquiries sorted &amp; routed automatically</span><span class="v">142<small>This week</small></span></div>
+        <div class="snap-row"><span class="l">Follow-ups drafted &amp; queued for review</span><span class="v">38<small>Awaiting staff approval</small></span></div>
+        <div class="snap-row"><span class="l">Staff hours returned to mission work</span><span class="v">11<small>Hours saved</small></span></div>
+      </div>
+      <p class="illus-note">Illustrative example — sample figures shown to demonstrate the kind of results these systems are designed to produce.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 2. SUPPORTING EXPLANATION -->
+<section class="section aiops-intro">
+  <div class="wrap intro-grid">
+    <div class="intro-copy reveal">
+      <span class="eyebrow" style="display:block;margin-bottom:20px">What We Do</span>
+      <p class="mission-lead">We design and implement practical AI systems that save time, improve follow-up, and make operations easier.</p>
+      <p>This isn't vague "AI consulting." We build clear, measurable systems that fit how your organization already works — then we make sure your staff stay in control of every decision. The goal is simple: less busywork, fewer dropped balls, and more time for the people you serve.</p>
+    </div>
+    <div class="vp reveal d1">
+      <div class="v"><span class="vi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><h3>Less busywork</h3><p>Automate the repetitive, copy-paste tasks that quietly eat your week.</p></div></div>
+      <div class="v"><span class="vi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></span><div><h3>Better follow-up</h3><p>Make sure every donor, member, family, and customer gets a timely reply.</p></div></div>
+      <div class="v"><span class="vi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7a2 2 0 012-2h5l2 2h7a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></span><div><h3>Organized information</h3><p>Turn scattered inboxes and spreadsheets into answers your team can find fast.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. PROBLEMS -->
+<section class="section problems">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Sound Familiar?</span>
+      <h2 class="h-lg">The everyday pressures we help with.</h2>
+    </div>
+    <div class="prob-grid">
+      <div class="prob-card reveal"><span class="pc-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4"/></svg></span><h3>Too much repetitive admin</h3><p>Your team spends hours each week on data entry, copy-paste, and routine replies that don't need a human's full attention.</p></div>
+      <div class="prob-card reveal d1"><span class="pc-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></span><h3>Follow-ups slipping through</h3><p>Donors, members, families, and customers fall through the cracks when no one has time to chase every thread.</p></div>
+      <div class="prob-card reveal d2"><span class="pc-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7a2 2 0 012-2h5l2 2h7a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M8 13h8"/></svg></span><h3>Information scattered everywhere</h3><p>Answers live in inboxes, spreadsheets, and people's heads — and nobody can find them quickly when it matters.</p></div>
+      <div class="prob-card reveal"><span class="pc-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><h3>Slow responses to inquiries</h3><p>Messages sit unanswered for days, and good first impressions quietly slip away.</p></div>
+      <div class="prob-card reveal d1"><span class="pc-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19V5M4 19h16M8 16l3-4 3 2 4-6"/></svg></span><h3>No clear visibility</h3><p>Leadership can't easily see what's pending, what's done, or where things are stuck.</p></div>
+      <div class="prob-card reveal d2"><span class="pc-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 6h11M8 12h11M8 18h11M3.5 6h.01M3.5 12h.01M3.5 18h.01"/></svg></span><h3>Meetings without action</h3><p>Good decisions get made in meetings, then quietly forgotten before anyone follows through.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. PRACTICAL SYSTEMS -->
+<section class="section systems" id="use-cases">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">What We Can Build</span>
+      <h2 class="h-lg">Practical systems we implement.</h2>
+      <p class="prod-lead" style="margin-inline:auto">We start with the one or two workflows that will save you the most time, then expand from there. A few of the systems organizations ask for most:</p>
+    </div>
+    <div class="sys-grid">
+      <div class="sys-item reveal"><span class="si-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><div><h3>Email triage &amp; response drafting</h3><p>Sort incoming email by topic and urgency, and draft replies for staff to review and send.</p></div></div>
+      <div class="sys-item reveal d1"><span class="si-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg></span><div><h3>Donor &amp; member follow-up</h3><p>Make sure every gift, pledge, and inquiry gets a timely, personal thank-you and next step.</p></div></div>
+      <div class="sys-item reveal d2"><span class="si-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.4 8.4 0 01-9 8.4 8.5 8.5 0 01-3.9-.9L3 20l1.1-4.1A8.4 8.4 0 1121 11.5z"/></svg></span><div><h3>Customer follow-up</h3><p>Automatically nudge leads and clients at the right moment so nothing goes cold.</p></div></div>
+      <div class="sys-item reveal"><span class="si-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></span><div><h3>Meeting notes &amp; task creation</h3><p>Turn a meeting into a clean summary with assigned action items, automatically.</p></div></div>
+      <div class="sys-item reveal d1"><span class="si-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span><div><h3>Internal knowledge search</h3><p>Let staff ask a question and get the right answer from your own documents and policies.</p></div></div>
+      <div class="sys-item reveal d2"><span class="si-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 3v4a1 1 0 001 1h4"/><path d="M17 21H7a2 2 0 01-2-2V5a2 2 0 012-2h7l5 5v11a2 2 0 01-2 2z"/><path d="M9 13h6M9 17h4"/></svg></span><div><h3>Intake form processing</h3><p>Read submissions, organize the details, and route each one to the right person.</p></div></div>
+      <div class="sys-item reveal"><span class="si-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7a2 2 0 012-2h5l2 2h7a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></span><div><h3>Document organization</h3><p>Sort, label, and file documents so the right version is always easy to find.</p></div></div>
+      <div class="sys-item reveal d1"><span class="si-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg></span><div><h3>Lead qualification</h3><p>Score and summarize new leads so your team focuses on the ones most ready to move.</p></div></div>
+      <div class="sys-item reveal d2"><span class="si-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 14h2m4 0h2m-8 4h2m4 0h2"/></svg></span><div><h3>Grant &amp; deadline tracking</h3><p>Keep every application, report, and renewal on schedule with timely reminders.</p></div></div>
+      <div class="sys-item reveal"><span class="si-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.9M16 3.1a4 4 0 010 7.8"/></svg></span><div><h3>Volunteer coordination</h3><p>Match volunteers to needs, confirm shifts, and send reminders without the back-and-forth.</p></div></div>
+      <div class="sys-item reveal d1"><span class="si-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19V5M4 19h16M8 16l3-4 3 2 4-6"/></svg></span><div><h3>Administrative dashboards</h3><p>Give leadership a clear, at-a-glance view of what's pending, done, and stuck.</p></div></div>
+      <div class="sys-item reveal d2"><span class="si-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9V19a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012 3.2 2 2 0 014 1h2.1a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L9.1 9a16 16 0 006 6l1.5-1.2a2 2 0 012.1-.4c.9.3 1.8.6 2.7.7a2 2 0 011.7 2z"/></svg></span><div><h3>Website &amp; missed-call follow-up</h3><p>Respond to website inquiries and missed calls quickly, so opportunities don't go cold.</p></div></div>
+    </div>
+    <div class="aiops-notice reveal" style="margin-top:34px">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01"/></svg>
+      <div>Every engagement is scoped to your needs — we don't install all of these at once. We start where the time savings are clearest. <a href="ai-operations-demo.html" data-analytics="cta_aiops_systems_demo" style="color:var(--gold-deep);font-weight:600">See a live inquiry-triage demo →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. PACKAGES / PRICING -->
+<section class="section packages" id="packages">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Services &amp; Pricing</span>
+      <h2 class="h-lg">Three clear ways to work together.</h2>
+      <p class="prod-lead" style="margin-inline:auto">Transparent starting prices, scoped to your organization. Most clients begin with an assessment, then move into implementation and ongoing support.</p>
+    </div>
+    <div class="price-grid">
+      <!-- Offer 1 -->
+      <div class="price-card reveal">
+        <span class="pk-tag">Step 1 · Start Here</span>
+        <h3>AI Operations Assessment</h3>
+        <div class="pk-price"><span class="from">Starting at</span><span class="amt">$750</span></div>
+        <p class="pk-desc">We map where time is being lost and where responsible automation will help most — then hand you a clear plan.</p>
+        <ul class="pk-list">
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 13l4 4L19 7"/></svg> Discovery meeting</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 13l4 4L19 7"/></svg> Workflow review</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 13l4 4L19 7"/></svg> AI opportunity map</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 13l4 4L19 7"/></svg> Risk &amp; privacy review</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 13l4 4L19 7"/></svg> Prioritized implementation plan</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 13l4 4L19 7"/></svg> Estimated staff-time savings</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 13l4 4L19 7"/></svg> Written recommendations &amp; 30-day action plan</li>
+        </ul>
+        <a class="btn btn-gold" href="ai-operations-assessment.html" data-analytics="cta_aiops_pkg_assessment">Book an Assessment <svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <!-- Offer 2 -->
+      <div class="price-card featured reveal d1">
+        <span class="pk-pop">Most Popular</span>
+        <span class="pk-tag">Step 2 · Build</span>
+        <h3>AI Workflow Implementation</h3>
+        <div class="pk-price"><span class="from">Starting at</span><span class="amt">$3,000</span></div>
+        <p class="pk-desc">We build and install one or more practical AI-powered workflows, then train your team to use them.</p>
+        <ul class="pk-list">
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 13l4 4L19 7"/></svg> One or more workflows from your assessment</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 13l4 4L19 7"/></svg> Secure setup inside your existing tools</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 13l4 4L19 7"/></svg> Human-review steps built in</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 13l4 4L19 7"/></svg> Staff training &amp; documentation</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 13l4 4L19 7"/></svg> Testing before anything goes live</li>
+        </ul>
+        <a class="btn btn-gold" href="ai-operations-assessment.html" data-analytics="cta_aiops_pkg_implementation">Start With an Assessment <svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <!-- Offer 3 -->
+      <div class="price-card reveal d2">
+        <span class="pk-tag">Step 3 · Sustain</span>
+        <h3>Ongoing AI Operations Support</h3>
+        <div class="pk-price"><span class="from">Starting at</span><span class="amt">$500</span><span class="per">/ month</span></div>
+        <p class="pk-desc">We maintain, monitor, and improve your systems so they keep working — and keep getting better.</p>
+        <ul class="pk-list">
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 13l4 4L19 7"/></svg> Monthly workflow monitoring</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 13l4 4L19 7"/></svg> System improvements &amp; updates</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 13l4 4L19 7"/></svg> Staff support &amp; troubleshooting</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 13l4 4L19 7"/></svg> New workflow recommendations</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 13l4 4L19 7"/></svg> Reporting &amp; privacy/access reviews</li>
+          <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M5 13l4 4L19 7"/></svg> Limited monthly implementation work</li>
+        </ul>
+        <a class="btn btn-outline" href="ai-operations-assessment.html" data-analytics="cta_aiops_pkg_support">Ask About Support <svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+    <p class="price-note reveal">Final scope and price depend on the specific workflows you choose — not every system listed above is included in a single project. Implementation work begins after a signed scope of work and an initial payment, so you always know exactly what you're getting before anything starts.</p>
+  </div>
+</section>
+
+<!-- 7. INDUSTRIES -->
+<section class="section industries" id="industries">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Who We Serve</span>
+      <h2 class="h-lg">Built for values-driven organizations.</h2>
+      <p class="prod-lead" style="margin-inline:auto">We work with organizations where trust, care, and follow-through matter — and where staff time is precious.</p>
+    </div>
+    <div class="ind-grid">
+      <div class="ind-card reveal"><span class="ic-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3l8 5v11a1 1 0 01-1 1h-4v-6h-6v6H5a1 1 0 01-1-1V8l8-5z"/><path d="M12 3v5"/></svg></span><h3>Synagogues &amp; community organizations</h3><p>Keep members, events, and communications organized — and make sure no request goes unanswered.</p><div class="ic-eg"><b>For example:</b> membership renewals, event RSVPs, and inquiry handling.</div></div>
+      <div class="ind-card reveal d1"><span class="ic-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg></span><h3>Nonprofits &amp; chesed organizations</h3><p>Spend less time on paperwork and more on the people you help, with reliable follow-up built in.</p><div class="ic-eg"><b>For example:</b> donor thank-yous, intake processing, and case follow-up.</div></div>
+      <div class="ind-card reveal d2"><span class="ic-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg></span><h3>Jewish schools &amp; educational organizations</h3><p>Streamline admissions, parent communication, and administrative reporting so staff can focus on students.</p><div class="ic-eg"><b>For example:</b> enrollment inquiries, forms, and deadline tracking.</div></div>
+      <div class="ind-card reveal"><span class="ic-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-5h6v5"/></svg></span><h3>Local service businesses</h3><p>Respond to inquiries faster, follow up on missed calls, and keep your pipeline moving.</p><div class="ic-eg"><b>For example:</b> quote requests, appointment reminders, and reviews.</div></div>
+      <div class="ind-card reveal d1"><span class="ic-ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2M3 12h18"/></svg></span><h3>Professional service firms</h3><p>Turn client intake, scheduling, and routine correspondence into smooth, repeatable processes.</p><div class="ic-eg"><b>For example:</b> client onboarding, document requests, and reminders.</div></div>
+      <div class="ind-card reveal d2" style="background:linear-gradient(160deg,#0e1d33,#0a1626);border-color:var(--line-dark);color:var(--ivory)"><span class="ic-ic" style="background:rgba(255,255,255,.05);color:var(--gold)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2a7 7 0 00-4 12.7V17a2 2 0 002 2h4a2 2 0 002-2v-2.3A7 7 0 0012 2z"/><path d="M9 21h6"/></svg></span><h3 style="color:var(--ivory)">Not sure if you fit?</h3><p style="color:rgba(250,250,248,.7)">If your team is buried in repetitive work or missed follow-ups, an assessment will tell you what's possible — clearly and honestly.</p><div class="ic-eg" style="margin-top:10px"><a href="ai-operations-assessment.html" class="link-gold" data-analytics="cta_aiops_industries_book" style="color:var(--gold)">Book an Assessment <svg class="arr" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. PROCESS -->
+<section class="section how" id="process">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">How It Works</span>
+      <h2 class="h-lg">A simple, low-risk path.</h2>
+      <p class="prod-lead" style="margin-inline:auto">No big leap of faith. We prove the value on something small, then grow from there.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><h3>Assess</h3><p>We learn how your team works, find the biggest time drains, and map where AI will genuinely help.</p></div>
+      <div class="step reveal d1"><h3>Plan</h3><p>You get a prioritized plan, a privacy review, and a clear estimate of the staff time you can save.</p></div>
+      <div class="step reveal d2"><h3>Build &amp; install</h3><p>We build the first workflow inside your existing tools, with human-review steps and careful testing.</p></div>
+      <div class="step reveal d3"><h3>Train &amp; launch</h3><p>We train your staff in plain language and launch only when everyone is comfortable.</p></div>
+    </div>
+    <div class="steps" style="margin-top:30px;grid-template-columns:1fr">
+      <div class="step reveal" style="max-width:none"><h3>Monitor &amp; improve</h3><p>With ongoing support, we keep an eye on your workflows, refine them over time, and recommend the next opportunity when you're ready.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. PRIVACY & RESPONSIBLE AI -->
+<section class="section privacy" id="privacy">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Trust, Privacy &amp; Responsible AI</span>
+      <h2 class="h-lg">Powerful tools, used <em>responsibly.</em></h2>
+      <p class="prod-lead" style="margin-inline:auto;color:rgba(250,250,248,.72)">AI should make your organization stronger without compromising trust. These commitments guide every system we build.</p>
+    </div>
+    <div class="priv-grid">
+      <div class="priv-item reveal"><span class="pi-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span><h3>Human review on every workflow</h3><p>AI prepares the work; your staff make the decisions. Important output is always reviewed by a person before it goes out.</p></div>
+      <div class="priv-item reveal d1"><span class="pi-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 7a2 2 0 012-2h5l2 2h7a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></span><h3>Data minimization</h3><p>We only use the information a workflow genuinely needs — nothing more — and avoid collecting sensitive details unnecessarily.</p></div>
+      <div class="priv-item reveal d2"><span class="pi-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg></span><h3>Access control</h3><p>People see only what they need to. Access is limited, deliberate, and reviewed.</p></div>
+      <div class="priv-item reveal"><span class="pi-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 12l9 5 9-5"/></svg></span><h3>You own your data</h3><p>Your data is yours. We never sell client data, and you can take it with you.</p></div>
+      <div class="priv-item reveal d1"><span class="pi-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/><path d="M4.5 4.5l15 15"/></svg></span><h3>No training on your confidential data</h3><p>We do not train public AI models on your confidential information without your explicit authorization.</p></div>
+      <div class="priv-item reveal d2"><span class="pi-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></span><h3>Clear limits &amp; staff responsibility</h3><p>We're honest about what AI can and can't do. Final decisions always rest with your staff, and we review automated workflows regularly.</p></div>
+    </div>
+    <div class="aiops-notice reveal" style="margin-top:36px;max-width:820px;margin-inline:auto">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01"/></svg>
+      <div>We don't make legal-compliance claims we can't back up. If your organization has specific regulatory requirements, we'll discuss them honestly during your assessment and document how each workflow handles your information.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. SAMPLE OUTCOMES -->
+<section class="section aiops-outcomes">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">What Good Looks Like</span>
+      <h2 class="h-lg">Sample outcomes.</h2>
+      <p class="prod-lead" style="margin-inline:auto;color:rgba(250,250,248,.72)">Illustrative examples of the kind of results these systems are designed to produce. They are not reports of specific client results.</p>
+    </div>
+    <div class="out-grid">
+      <div class="out-tile reveal"><span class="ot-scenario">Synagogue</span><h3>Every inquiry answered the same day</h3><p>Incoming questions are sorted and drafted automatically, so the office can reply quickly even during busy seasons.</p><div class="ot-metric">Same-day<small>Target response time</small></div></div>
+      <div class="out-tile reveal d1"><span class="ot-scenario">Nonprofit</span><h3>No donor left without a thank-you</h3><p>Gifts trigger a personal, staff-approved thank-you and a clear next step — so relationships stay warm.</p><div class="ot-metric">100%<small>Follow-up coverage goal</small></div></div>
+      <div class="out-tile reveal d2"><span class="ot-scenario">Service business</span><h3>Hours of admin returned each week</h3><p>Routine replies, scheduling, and data entry are handled in the background, freeing the team for real work.</p><div class="ot-metric">~10 hrs<small>Illustrative weekly savings</small></div></div>
+    </div>
+    <p class="illus-note" style="justify-content:center;margin-top:28px;color:var(--gray-light)">Illustrative scenarios with sample figures — not actual client data. <a href="transparency.html" style="color:var(--gold-soft);text-decoration:underline;text-underline-offset:2px">Read our transparency note</a>.</p>
+  </div>
+</section>
+
+<!-- 11. FAQ -->
+<section class="section faq" id="faq">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Questions</span>
+      <h2 class="h-lg">Frequently asked questions.</h2>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item"><summary>Will AI replace our staff?<svg class="fq-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></summary><div class="fq-a">No — and that's the point. Our systems are designed to remove repetitive work so your team can spend more time on people and judgment. Every workflow keeps a person in control, and staff review and approve important output.</div></details>
+      <details class="faq-item"><summary>How much does it cost?<svg class="fq-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></summary><div class="fq-a">Most organizations begin with an AI Operations Assessment, starting at $750. Workflow implementations start at $3,000, and ongoing support starts at $500 per month. Final pricing depends on the specific workflows you choose, and you'll always see the scope and price before work begins.</div></details>
+      <details class="faq-item"><summary>Do we need to be technical?<svg class="fq-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></summary><div class="fq-a">Not at all. We handle the technical work and explain everything in plain language. We also train your staff so the systems are easy to use day to day.</div></details>
+      <details class="faq-item"><summary>Is our information kept private?<svg class="fq-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></summary><div class="fq-a">Yes. We practice data minimization, keep access controlled, and you own your data. We don't sell client data, and we don't train public models on your confidential information without your authorization. See <a href="#privacy">Trust, Privacy &amp; Responsible AI</a> for the full list of commitments.</div></details>
+      <details class="faq-item"><summary>Which tools do you work with?<svg class="fq-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></summary><div class="fq-a">We build inside the tools you already use wherever possible — your email, spreadsheets, forms, and CRM. The assessment includes a review of your current tools so we can recommend the simplest, most reliable setup.</div></details>
+      <details class="faq-item"><summary>How long does it take?<svg class="fq-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></summary><div class="fq-a">An assessment is typically completed within a couple of weeks. A first workflow is often live within a few weeks of a signed scope of work, depending on complexity.</div></details>
+      <details class="faq-item"><summary>What if we only want one small thing?<svg class="fq-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></summary><div class="fq-a">That's a great way to start. We often begin with a single workflow that solves one clear pain point, so you can see the value before expanding.</div></details>
+      <details class="faq-item"><summary>How do payments work?<svg class="fq-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></summary><div class="fq-a">Projects begin after a signed scope of work and an initial payment, so expectations are clear on both sides. We'll send a simple invoice — there's nothing to set up on your end.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- 12. FINAL CTA -->
+<section class="section aiops-cta-band">
+  <div class="wrap">
+    <span class="burst reveal"><svg viewBox="0 0 80 80" fill="none"><path d="M40 8 C 44.8 22, 54 28.8, 54 43.6 C 54 57.2 46.4 67.6 40 67.6 C 33.6 67.6 26 57.2 26 43.6 C 26 30 32.4 22.8 40 8 Z" fill="currentColor"/></svg></span>
+    <h2 class="serif reveal d1">See what's possible in <em>one conversation.</em></h2>
+    <p class="lead reveal d2">Start with an AI Operations Assessment. You'll come away with a clear, honest picture of where AI can save your team time — whether or not you work with us next.</p>
+    <div class="cta-row reveal d2">
+      <a class="btn btn-gold btn-lg" href="ai-operations-assessment.html" data-analytics="cta_aiops_final_book">Book an AI Operations Assessment <svg class="arr" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-ghost btn-lg" href="ai-operations-demo.html" data-analytics="cta_aiops_final_demo">See the Live Demo</a>
+    </div>
+  </div>
+</section>
+
+<footer id="site-footer"></footer>
+<script src="assets/oir-mockups.js"></script>
+<script src="assets/oir-tweaks.js"></script>
+<script src="assets/oir.js"></script>
+</body>
+</html>

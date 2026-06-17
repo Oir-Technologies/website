@@ -1,4 +1,6 @@
 # Oir Technologies — Netlify configuration (static site, no build step)
+# NOTE: Production currently deploys on Vercel; this file is retained for an
+# optional Netlify fallback. Canonical URLs use the .html form on both hosts.
 [build]
   publish = "."
   command = ""

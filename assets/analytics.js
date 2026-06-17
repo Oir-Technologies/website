@@ -102,6 +102,9 @@
     // Project brief submission
     var form = document.getElementById('projectForm');
     if (form) form.addEventListener('submit', function () { track('project_brief_submitted', { page: document.body.getAttribute('data-page') || '' }); });
+    // AI Operations: explicit page-view signal for the service division
+    var page = document.body.getAttribute('data-page') || '';
+    if (page.indexOf('ai-operations') === 0) track('ai_ops_page_view', { page: page });
   }
 
   initGA4(CONFIG.ga4);

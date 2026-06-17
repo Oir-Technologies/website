@@ -16,3 +16,8 @@ LAUNCH_READINESS_REPORT.md
 DEPLOYMENT.md
 *_AUDIT.md
 *_READINESS_REPORT.md
+
+# Internal sales materials — keep local. This GitHub repo is PUBLIC and the
+# whole repo root is published to Netlify, so internal playbooks must stay out
+# of both. Back these up to a private location (private repo, Drive, or Notion).
+_sales/
